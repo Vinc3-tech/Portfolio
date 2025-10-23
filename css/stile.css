@@ -1,0 +1,47 @@
+/*--colori--*/
+:root{
+    --nero: #0B0B0B;
+    --grigio-scuro: #1A1A1A;
+    --bianco-caldo: #F5F5F5;
+    --grigio-perla: #D1D1D1;
+    --beige: #B9AFA3;
+    --blu-scuro: #3A4A5A;
+    --marrone: #A66B4D;
+
+    --sfondo: var(--nero);
+    --testo: var(--bianco-caldo);
+}
+
+/*--font--*/
+.inter {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.playfair {
+  font-family: "Playfair", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.caveat{
+  font-family: "Caveat", cursive;
+  font-weight: 500;
+  font-style: normal;
+}
+.instrument-sans {
+  font-family: "Instrument Sans", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/*--responsive layout--*/
+/* Disposizione a griglia per pc */
+body{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto;
+    background-color: var(--sfondo);
+    color: var(--testo);
+    margin: 0;
+    padding: 0;
+}
