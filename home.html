@@ -9,22 +9,42 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-    <header>
-        <div class="navbar">
+    <!--js per il cursore-->
+    <script src="js/cursore.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script> <!--pr le icone-->
 
+
+    <div class="cursor-standard"></div>
+    <div class="cursor-hover"></div>
+    <div class="overlay"></div>
+
+    <header>
+        <div class="navbar instrument-sans" style="text-transform: uppercase; font-size: 12px; line-height: 16px; font-weight: 400;">
+            <ul>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About me</a></li>
+                <li><a href="#">let's talk</a></li>
+            </ul>
         </div>
     </header>
 
     <main>
 
         <div class="title-hero-page">
-            <h1 class="inter">let's work<br><span class="caveat">together</span></h1>
+            <h1>
+                <span class="inter" style="font-size: 7rem;">Hi I'm Vincenzo</span><br>
+                <span class="caveat" style="font-size: 3.5rem;">Design. Codice. Creatività.<br>Tutto inizia da qui.</span>
+            </h1>
         </div>
+
+    <!--freccia in basso-->
+    <i data-lucide="move-down" style="z-index: 333; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 80px; color: var(--testo);" class="arrow"></i>
 
     </main>
 
@@ -32,5 +52,6 @@
         
     </footer>
     
+    <script>lucide.createIcons();</script>
 </body>
 </html>
