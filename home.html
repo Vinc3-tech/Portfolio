@@ -24,11 +24,12 @@
     <div class="overlay"></div>
 
     <header>
-        <div class="navbar instrument-sans" style="text-transform: uppercase; font-size: 12px; line-height: 16px; font-weight: 400;">
+        <div class="navbar inter" style="text-transform: uppercase; font-size: 12px; line-height: 16px; font-weight: 400;">
             <ul>
                 <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About me</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#aboutMe">About me</a></li>
                 <li><a href="#">let's talk</a></li>
             </ul>
         </div>
@@ -36,15 +37,45 @@
 
     <main>
 
-        <div class="title-hero-page">
-            <h1>
-                <span class="inter" style="font-size: 7rem;">Hi I'm Vincenzo</span><br>
-                <span class="caveat" style="font-size: 3.5rem;">Design. Codice. Creatività.<br>Tutto inizia da qui.</span>
-            </h1>
+        <div style="width: 98vw; height: 98vh; margin: 0; padding: 0; background-color: var(--grigio-caldo);
+                    position: relative; top: -50%; left: 50%; transform: translateX(-50%) translateY(1%); border-radius: 10px;" id="home">
+            <div class="title-hero-page">
+                <h1>
+                    <span class="inter" style="font-size: 7rem;">Hi I'm Vincenzo</span><br>
+                    <span class="caveat" style="font-size: 3.5rem;">Design. Codice. Creatività.<br>Tutto inizia da qui.</span>
+                </h1>
+            </div>
+
+            <div class="p-laterale">
+                <span class="instrument-serif" style="font-style: italic;">
+                    Ciao, sono Vincenzo.<br>
+                    Creo esperienze digitali innovative.<br>
+                    Mi specializzo in HTML, CSS e JavaScript per realizzare idee creative.<br>
+                    <button type="button">Esplora i miei progetti</button>
+                </span>
+            </div>
+
+            <!--freccia in basso-->
+            <div class="freccia"style="position: absolute; bottom: 0; left: 50%; color: var(--testo); display: flex; align-items: center;">
+                <i data-lucide="move-down" class="arrow"></i>
+                <span class="instrument-serif" style="font-style: italic; font-size: 1.2rem;">Scroll down</span>
+            </div>
         </div>
 
-    <!--freccia in basso-->
-    <i data-lucide="move-down" style="z-index: 333; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 80px; color: var(--testo);" class="arrow"></i>
+        <div style="padding: 100px 0 100px 0; display: flex; flex-direction: column;">
+            <div class="aboutMe" id="aboutMe">
+                <div class="tit-about instrument-serif" style="font-style: italic;">
+                    <h1 style="margin: 20px 20px 0 0;">About Me</h1>
+                </div>
+                <div class="p-about instrument-sans" style="font-weight: 400;">
+                    <span>
+                        Ciao! Sono un appassionato di tecnologia e design, con un forte interesse per lo sviluppo web. Ho esperienza nella creazione di siti web reattivi e user-friendly, utilizzando HTML, CSS e JavaScript. La mia missione è trasformare idee in esperienze digitali coinvolgenti e innovative. Quando non lavoro, mi piace esplorare nuove tecnologie e migliorare le mie competenze.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mystory"></div>
 
     </main>
 

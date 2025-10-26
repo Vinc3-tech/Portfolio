@@ -1,15 +1,13 @@
 /*--colori--*/
 :root{
-    --nero: #0B0B0B;
     --grigio-scuro: #1A1A1A;
-    --bianco-caldo: #F5F5F5;
-    --grigio-perla: #D1D1D1;
-    --beige: #B9AFA3;
+    --beige: #f4f1ee;
+    --grigio-caldo: #e4e4e4;
     --blu-scuro: #3A4A5A;
     --marrone: #A66B4D;
 
-    --sfondo: var(--bianco-caldo);
-    --testo: var(--nero);
+    --sfondo: var(--beige);
+    --testo: var(--grigio-scuro);
 }
 
 /*--font--*/
@@ -40,6 +38,20 @@
 }
 
 /*overlay grana*/
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/dust.png');
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/*evidenzia*/
+body::selection{
+  background-color: var(--marrone);
+}
 
 /*--cursori personalizzati--*/
 .cursor-standard{
@@ -56,12 +68,16 @@
   mix-blend-mode: difference;
 }
 
+html, body{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
 /*--responsive layout--*/
 /* Disposizione a griglia per pc */
 body{
   background-color: var(--sfondo);
-  margin: 0;
-  padding: 0;
 }
 /*--navbar--*/
 .navbar{
@@ -70,7 +86,8 @@ body{
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  border-bottom: 1px solid var(--beige);
+  border-bottom: 1px solid var(--testo);
+  z-index: 99;
 }
 ul {
   list-style-type: none;
@@ -98,7 +115,21 @@ ul li a {
   transform: translateX(-50%) translateY(-50%);
   color: var(--testo);
 }
+/*paragrafo laterale*/
+.p-laterale{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: var(--testo);
+  width: 15vw;
+  padding: 20px;
+  font-size: 1.3rem;
+}
+/*freccia scroll down*/
 .arrow{
+  width: 60px;
+  height: 60px;
   animation: moveUpDown 2s infinite;
 }
 @keyframes moveUpDown {
@@ -108,4 +139,26 @@ ul li a {
   50%{
     transform: translateY(0px);
   }
+}
+.aboutMe{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  color: var(--testo);
+}
+.tit-about{
+  text-transform: uppercase;
+  border-right: 1px solid var(--testo);
+  text-align: right;
+}
+.p-about{
+  font-size: 1.5rem;
+}
+/*--my "story"--*/
+.mystory{
+  width: 98vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--grigio-caldo);
 }

@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     //elementi a cui va applicato il mouse hover
-    const elementi = document.querySelectorAll('a');
+    const elementi = document.querySelectorAll('a, button');
     //cursori
     const cursore = document.querySelector('.cursor-standard');
 
