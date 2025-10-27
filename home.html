@@ -14,49 +14,49 @@
 </head>
 <body>
 
+    <script src="https://unpkg.com/lucide@latest"></script> <!--pr le icone-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script> <!--gsap-->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
     <!--js per il cursore-->
     <script src="js/cursore.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script> <!--pr le icone-->
-
 
     <div class="cursor-standard"></div>
     <div class="cursor-hover"></div>
     <div class="overlay"></div>
 
     <header>
-        <div class="navbar inter" style="text-transform: uppercase; font-size: 12px; line-height: 16px; font-weight: 400;">
+        <div class="navbar inter" style="text-transform: uppercase; font-size: 12px; line-height: 16px; font-weight: 400;" id="testo-secondario">
             <ul>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#aboutMe">About me</a></li>
-                <li><a href="#">let's talk</a></li>
+                <li><span>Portfolio</span></li>
+                <li><span>Home</span></li>
+                <li><span>Work</span></li>
+                <li class="aboutMe"><span>About me</span></li>
+                <li><span>let's talk</span></li>
             </ul>
         </div>
     </header>
 
     <main>
 
-        <div style="width: 98vw; height: 98vh; margin: 0; padding: 0; background-color: var(--grigio-caldo);
-                    position: relative; top: -50%; left: 50%; transform: translateX(-50%) translateY(1%); border-radius: 10px;" id="home">
+        <div style="width: 98vw; height: 98vh; margin: 0; padding: 0; background-color: var(--grigio-caldo); position: relative; top: -50%; left: 50%; transform: translateX(-50%) translateY(1%); border-radius: 10px;" id="home">
             <div class="title-hero-page">
                 <h1>
-                    <span class="inter" style="font-size: 7rem;">Hi I'm Vincenzo</span><br>
-                    <span class="caveat" style="font-size: 3.5rem;">Design. Codice. Creatività.<br>Tutto inizia da qui.</span>
+                    <span class="inter" style="font-size: 7rem;" id="saluto-intro">Hi I'm Vincenzo</span><br>
+                    <span class="caveat" style="font-size: 3.5rem;" id="testo-secondario">Design. Codice. Creatività.<br>Tutto inizia da qui.</span>
                 </h1>
             </div>
 
-            <div class="p-laterale">
+            <div class="p-laterale" id="testo-secondario">
                 <span class="instrument-serif" style="font-style: italic;">
                     Ciao, sono Vincenzo.<br>
                     Creo esperienze digitali innovative.<br>
                     Mi specializzo in HTML, CSS e JavaScript per realizzare idee creative.<br>
-                    <button type="button">Esplora i miei progetti</button>
+                    <button type="button" class="EsploraProgetti inter" style="font-weight: 400;">Esplora i miei progetti</button>
                 </span>
             </div>
 
             <!--freccia in basso-->
-            <div class="freccia"style="position: absolute; bottom: 0; left: 50%; color: var(--testo); display: flex; align-items: center;">
+            <div class="freccia"style="position: absolute; bottom: 0; left: 50%; color: var(--testo); display: flex; align-items: center;" id="testo-secondario">
                 <i data-lucide="move-down" class="arrow"></i>
                 <span class="instrument-serif" style="font-style: italic; font-size: 1.2rem;">Scroll down</span>
             </div>
@@ -84,5 +84,6 @@
     </footer>
     
     <script>lucide.createIcons();</script>
+    <script src="js/animazione-intro.js"></script>
 </body>
 </html>
