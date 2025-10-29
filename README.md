@@ -8,7 +8,7 @@ Ciao — sono Vincenzo, uno studente / sviluppatore appassionato di web developm
 
 Nel repository troverai una pagina principale (`home.html`) che funge da vetrina e le cartelle `css/` e `javascript/` con i file del progetto.
 
-Se vuoi contattarmi o vedere altri lavori, scrivimi a: [tuo.email@example.com] o visita il mio profilo LinkedIn: [link].
+Se vuoi contattarmi o vedere altri lavori, scrivimi [vincenzov.mob@gmail.com] o visita il mio profilo LinkedIn: [link].
 
 Tecnologie principali: HTML, CSS, JavaScript
 
