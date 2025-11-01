@@ -9,7 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Geist:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -24,21 +24,47 @@
     <div class="cursor-hover"></div>
     <div class="overlay"></div>
 
-    <header>
-        <div class="navbar inter" style="text-transform: uppercase; font-size: 12px; line-height: 16px; font-weight: 400;" id="testo-secondario">
+    <main>
+        
+        <div class="menu-nav">
             <ul>
-                <li><span>Portfolio</span></li>
-                <li><span>Home</span></li>
-                <li><span>Work</span></li>
-                <li class="aboutMe"><span>About me</span></li>
-                <li><span>let's talk</span></li>
+                <li><span>About me</span></li>
+                <li><span>My projects</span></li>
+                <li><span>Contact me</span></li>
             </ul>
         </div>
-    </header>
 
-    <main>
+        <div id="home">
 
-        <div style="width: 98vw; height: 98vh; margin: 0; padding: 0; background-color: var(--grigio-caldo); position: relative; top: -50%; left: 50%; transform: translateX(-50%) translateY(1%); border-radius: 10px;" id="home">
+            <div class="navbar inter" id="testo-secondario">
+                <ul>
+                    <li><span>Portfolio</span></li>
+                </ul>
+            </div>
+            <script>
+                gsap.registerPlugin(ScrollToPlugin);    //registro i plugin
+                const menu = document.querySelector(".menu-nav");
+                const navbar = document.querySelector(".navbar");
+                if (navbar) {
+                    navbar.addEventListener("click", (event)=>{
+                        event.stopPropagation();
+                        gsap.to(menu, {
+                            height: "40vh",
+                            duration: .5,
+                            ease: "power2.out"
+                        });
+                    });
+                }
+                window.addEventListener("click", ()=>{
+                    gsap.to(menu, {
+                        height: 0,
+                        duration: .5,
+                        ease: "power2.out"
+                    });
+                });
+            </script>
+            </script>
+
             <div class="title-hero-page">
                 <h1>
                     <span class="inter" style="font-size: 7rem;" id="saluto-intro">Hi I'm Vincenzo</span><br>
@@ -56,23 +82,21 @@
             </div>
 
             <!--freccia in basso-->
-            <div class="freccia"style="position: absolute; bottom: 0; left: 50%; color: var(--testo); display: flex; align-items: center;" id="testo-secondario">
+            <div class="freccia" id="testo-secondario">
                 <i data-lucide="move-down" class="arrow"></i>
                 <span class="instrument-serif" style="font-style: italic; font-size: 1.2rem;">Scroll down</span>
             </div>
         </div>
 
-        <div style="padding: 100px 0 100px 0; display: flex; flex-direction: column;">
-            <div class="aboutMe" id="aboutMe">
+        <div class="aboutMe" id="aboutMe">
                 <div class="tit-about instrument-serif" style="font-style: italic;">
-                    <h1 style="margin: 20px 20px 0 0;">About Me</h1>
+                    <h1>About Me</h1>
                 </div>
-                <div class="p-about instrument-sans" style="font-weight: 400;">
+                <div class="p-about geist" style="font-weight: 600;">
                     <span>
                         Ciao! Sono un appassionato di tecnologia e design, con un forte interesse per lo sviluppo web. Ho esperienza nella creazione di siti web reattivi e user-friendly, utilizzando HTML, CSS e JavaScript. La mia missione è trasformare idee in esperienze digitali coinvolgenti e innovative. Quando non lavoro, mi piace esplorare nuove tecnologie e migliorare le mie competenze.
                     </span>
                 </div>
-            </div>
         </div>
 
         <div class="mystory">
@@ -81,7 +105,7 @@
                 <!--1 anno-->
                 <div class="annata">
                     <div class="anno instrument-serif">2022/23</div>
-                    <div class="titAnno">HTML e CSS</div>
+                    <div class="titAnno">HTML & CSS</div>
                     <div class="descAnno">
                         Il 2022 è il mio primo anno scolastico in un liceo ma è anche stato l’anno in cui ho scoperto il mondo dello sviluppo web.<br> Ho imparato a usare HTML e CSS per creare le prime pagine statiche, capire la struttura di un sito e l’importanza del design pulito. È qui che ho capito quanto mi piace dare forma alle idee con il codice.
                     </div>
@@ -109,6 +133,12 @@
                     <div class="descAnno">
                         Ho approfondito le strutture dati e iniziato a lavorare con SQL, imparando a gestire e organizzare informazioni in modo efficiente.<br>Ora sto integrando queste conoscenze con il web design, per creare progetti più completi e dinamici.
                     </div>
+                </div>
+            </div>
+            <div class="annata-futuro">
+                <div class="error instrument-serif">ERROR 404</div>
+                <div class="txt-futuro inter">
+                    <span>Futuro ancora da decidere</span>
                 </div>
             </div>
         </div>

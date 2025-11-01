@@ -16,19 +16,15 @@
   font-weight: 900;
   font-style: normal;
 }
-.playfair {
-  font-family: "Playfair", serif;
-  font-weight: 500;
-  font-style: normal;
-}
 .caveat{
   font-family: "Caveat", cursive;
   font-weight: 500;
   font-style: normal;
 }
-.instrument-sans {
-  font-family: "Instrument Sans", sans-serif;
-  font-weight: 500;
+.geist {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
   font-style: normal;
 }
 .instrument-serif {
@@ -71,23 +67,27 @@ body::selection{
 html, body{
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 /*--responsive layout--*/
-/* Disposizione a griglia per pc */
+/* ----------------Disposizione a griglia per pc---------------------- */
 body{
   background-color: var(--sfondo);
 }
 /*--navbar--*/
 .navbar{
-  width: 80vw;
+  width: 100px;
   position: absolute;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-bottom: 1px solid var(--testo);
+  right: 0;
   z-index: 99;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  background-color: var(--marrone);
+  border-radius: 10px;
+  margin: 20px;
 }
 ul {
   list-style-type: none;
@@ -98,9 +98,34 @@ ul {
 }
 ul li span {
   display: block;
-  color: var(--testo);
-  padding: 30px 0px;
+  color: var(--sfondo);
+  padding: 20px 10px;
   text-decoration: none;
+}
+/*menù nav in cascata*/
+.menu-nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0vh;
+  background-color: var(--marrone);
+  color: var(--sfondo);
+  z-index: 9999;
+  overflow: hidden;
+}
+/*--blocco home--*/
+#home{
+  width: 98vw;
+  height: 98vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--grigio-caldo);
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(1%);
+  border-radius: 10px;
 }
 /*--titolo centro pagina--*/
 .title-hero-page{
@@ -134,6 +159,14 @@ ul li span {
   color: var(--testo);
 }
 /*freccia scroll down*/
+.freccia{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  color: var(--testo);
+  display: flex;
+  align-items: center;
+}
 .arrow{
   width: 60px;
   height: 60px;
@@ -147,21 +180,27 @@ ul li span {
     transform: translateY(0px);
   }
 }
+/*--sezione aboutMe--*/
 .aboutMe{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0 100px 0;
   color: var(--testo);
 }
 .tit-about{
   text-transform: uppercase;
-  border-right: 1px solid var(--testo);
   text-align: right;
+  width: 20vw;
+  margin: 20px;
 }
 .p-about{
-  font-size: 1.5rem;
+  border-left: 1px solid var(--testo);
+  font-size: 2.5rem;
+  width: 70vw;
+  padding: 20px;
 }
-/*--my "story"--*/
+/*--my scolastic path--*/
 .mystory{
   width: 98vw;
   position: relative;
@@ -178,13 +217,14 @@ ul li span {
   margin: 0;
   padding: 50px 0 50px 0;
 }
-.timeline {
+.timeline {   /*cont timeline*/
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   grid-template-columns: repeat(2, 1fr);
   position: relative;
+  padding-bottom: 30px;
 }
-.timeline::before{
+.timeline::before{    /*--linea della timeline*/
   content: '';
   position: absolute;
   height: 100%;
@@ -195,6 +235,19 @@ ul li span {
   transform: translateX(-50%);
   background-color: var(--marrone);
 }
+.timeline::after{   /*punto alla fine della timeline*/
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--marrone);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  z-index: 2;
+  border: 5px solid var(--grigio-caldo);
+}
 .annata{
   display: flex;
   flex-direction: column;
@@ -202,10 +255,10 @@ ul li span {
   height: 50vh;
   margin: 50px;
   position: relative;
-  --pseudo-positionX: 0%;     /*variabili per l'assegnazione della posizione con js*/
+  --pseudo-positionX: 0%;     /*variabili per l'assegnazione dinamica delle posizioni con js*/
   --pseudo-translateX: -100%;
 }
-.annata::before{
+.annata::before{    /*punto di ogni paragrafo*/
   content: '';
   position: absolute;
   top: 50%;
@@ -216,14 +269,33 @@ ul li span {
   height: 40px;
   border-radius: 50%;
   z-index: 2;
+  border: 5px solid var(--grigio-caldo);
 }
 .anno{
   font-style: italic;
   font-size: 4rem;
 }
 .titAnno{
-  font-size: 3.5rem;
+  font-size: 1.5rem;
 }
 .descAnno{
   font-size: 2rem;
 }
+.annata-futuro{
+  margin-top: 50px;
+}
+.error{
+  margin: 0;
+  font-size: 2rem;
+  font-style: italic;
+}
+.txt-futuro{
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+
+/* ----------------Disposizione a griglia per tablet---------------------- */
+
+
+/* ----------------Disposizione a griglia per telefono---------------------- */

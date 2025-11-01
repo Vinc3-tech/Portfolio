@@ -9,10 +9,10 @@ if (annate) {
             element.style.textAlign = (i % 2 === 0) ? "left" : "right";
             if (i%2 === 0) {
                 element.style.setProperty('--pseudo-positionX', '0%');
-                element.style.setProperty('--pseudo-translateX', '-175%');
+                element.style.setProperty('--pseudo-translateX', '-150%');
             } else {
                 element.style.setProperty('--pseudo-positionX', '100%');
-                element.style.setProperty('--pseudo-translateX', '75%');
+                element.style.setProperty('--pseudo-translateX', '50%');
             }
             element.style.gridRow = i+1;    //incrementa la riga ogni elemento
         }
@@ -22,8 +22,8 @@ if (annate) {
 //assegno i font
 document.querySelectorAll('.titAnno').forEach(element =>{
     element.classList.add('inter');
-    element.style.fontWeight = "600"
+    element.style.fontWeight = "600";
 });
 document.querySelectorAll('.descAnno').forEach(element =>{
-    element.classList.add('instrument-sans');
+    element.classList.add('geist');
 });

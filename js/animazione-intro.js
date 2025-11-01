@@ -54,13 +54,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* --scroll nella pagina-- */
-const aboutMeLink = document.querySelector('.aboutMe');
+const aboutMeLink = document.querySelector('.aboutMeLink');
 if (aboutMeLink) {
-    aboutMeLink.addEventListener("click", ()=>{
-        gsap.to(window, {
-            duration: 1,
-            scrollTo: '#aboutMe',
-            autoKill: true,
-        })
-    })
+    aboutMeLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        // Trova l'elemento target
+        const targetSection = document.querySelector("#aboutMe");
+            if (targetSection) {
+                // Usa direttamente il selettore con ScrollToPlugin e un offset
+                gsap.to(window, {
+                    duration: 1.0,
+                    scrollTo: { y: "#aboutMe", offsetY: 80 },
+                    ease: "power3.inOut"
+                });
+            }
+    });
 }
