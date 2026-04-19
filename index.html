@@ -19,12 +19,15 @@
     <!--loading section-->
     <div class="loading-section">
         <div class="zona-sopra">
-            <div id="print">print("Hello World!!")</div>
+            <div id="print" class="title-font">print("Hello World!!")</div>
         </div>
         <div class="zona-centro">
             <div id="linea">
-                <svg height="50" width="100vw" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0" y1="25" x2="100vw" y2="25"/>
+                <svg width="100vw" height="100vh" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- metà destra: dal centro verso destra -->
+                    <line class="line-right" x1="50%" y1="50%" x2="100%" y2="50%" stroke="var(--highlight-2)" stroke-width="3"/>
+                    <!-- metà sinistra: dal centro verso sinistra -->
+                    <line class="line-left" x1="50%" y1="50%" x2="0%" y2="50%" stroke="var(--highlight-2)" stroke-width="3"/>
                 </svg>
             </div>
             <div id="circle">
@@ -33,9 +36,9 @@
                 </svg>
             </div>
             <div id="scritte">
-                <h3 id="loading-text">Loading...</h3>
-                <h1 id="title-caricamento">Portfolio</h1>
-                <h3 id="madeBy-text">Made by<br>Vincenzo</h3>
+                <h3 id="loading-text" class="secondary-font">Loading...</h3>
+                <h1 id="title-caricamento" class="title-font">Portfolio</h1>
+                <h3 id="madeBy-text" class="secondary-font"><span>Made by</span><br><span>Vincenzo</span></h3>
             </div>
         </div>
         <div class="zona-sotto">
