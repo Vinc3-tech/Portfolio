@@ -4,14 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+
+    <!--collegamenti css-->
+    <link rel="stylesheet" href="src/css/colori.css">
+    <link rel="stylesheet" href="src/css/font.css">
     <link rel="stylesheet" href="style.css">
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!--loading section-->
-    
+    <div class="loading-section">
+        <div class="zona-sopra">
+            <div id="print">print("Hello World!!")</div>
+        </div>
+        <div class="zona-centro">
+            <div id="linea">
+                <svg height="50" width="100vw" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="25" x2="100vw" y2="25"/>
+                </svg>
+            </div>
+            <div id="circle">
+                <svg height="500" width="500" xmlns="http://www.w3.org/2000/svg">
+                    <circle r="250" cx="250" cy="250" fill="var(--highlight)"/>
+                </svg>
+            </div>
+            <div id="scritte">
+                <h3 id="loading-text">Loading...</h3>
+                <h1 id="title-caricamento">Portfolio</h1>
+                <h3 id="madeBy-text">Made by<br>Vincenzo</h3>
+            </div>
+        </div>
+        <div class="zona-sotto">
+            <div id="percentuale-caricamento">100%</div>
+        </div>
+    </div>
 
     <!--navbar-->
+
+    <!--collegamenti x js e gsap-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="src/js/animation/intro.js"></script>
+    <script src="src/js/main.js"></script>
     
 </body>
 </html>
