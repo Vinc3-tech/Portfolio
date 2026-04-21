@@ -2,6 +2,7 @@ html, body{
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: var(--sfondo-primario);
 }
 
 /*loading section*/
@@ -54,6 +55,19 @@ html, body{
     /*animation: battito 5s ease-in-out infinite;*/
     transform-origin: center center;
 }
+/* prevent large SVGs from forcing scrollbars */
+#circle svg {
+    max-width: 100vw;
+    max-height: 100vh;
+    display: block;
+}
+
+/* ensure the background/line svg doesn't overflow */
+#linea svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 @keyframes battito {
     0%, 100%{
         transform: translate(-50%, -50%) scale(0.6);
@@ -82,7 +96,7 @@ html, body{
     font-size: 2.5rem;
 }
 .zona-sopra, .zona-sotto{
-    width: 100vw;
+    width: 100%;
     height: 50vh;
     position: absolute;
     background-color: var(--sfondo-primario);
@@ -106,4 +120,57 @@ html, body{
     right: 0;
     margin: 10px;
     font-size: 3rem;
+}
+
+/*------navbar--------*/
+.navbar{
+    position: absolute;
+    width: 100%;
+    color: var(--testo-priamrio);
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+ul #n_link {
+    float: right;
+}
+ul #logo{
+    float: left;
+}
+ul li a {
+    display: block;
+    text-align: center;
+    padding: 20px 22px;
+    text-decoration: none;
+    color: var(--testo-priamrio);
+}
+#scritte_centrali{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*-------hero section-------*/
+.hero-section{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#introduction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 8rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: .9;
 }
