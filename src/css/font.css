@@ -1,12 +1,22 @@
 .title-font {
-  font-family: "Zen Old Mincho", serif;
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "YOPQ" 300;
+}
+
+.secondary-font {
+  font-family: "Instrument Serif", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.secondary-font {
+.jp-font{
   font-family: "Noto Sans JP", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  font-size: 2rem;
 }
