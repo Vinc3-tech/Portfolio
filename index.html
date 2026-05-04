@@ -17,7 +17,7 @@
 <body>
 
     <!--loading section-->
-    <div class="loading-section">
+    <section class="loading-section">
 
         <div class="zona-sopra">
             <div id="print" class="secondary-font">print("Hello World!!")</div>
@@ -47,21 +47,26 @@
         <div class="zona-sotto">
             <div id="percentuale-caricamento">100%</div>
         </div>
-    </div>
+    </section>
 
     <!--navbar-->
-    <div class="navbar secondary-font">
+    <navbar class="navbar secondary-font">
         <span id="scritte_centrali">{ Frontend developer / web-designer }</span>
         <ul>
             <li id="logo"><a href="#">Vincenzo Venturino</a></li>
             <li id="menu"><a href="#menu">Menù</a></li>
         </ul>
-    </div>
+    </navbar>
 
     <!--hero page-->
-    <div class="hero-section title-font">
+    <section class="hero-section title-font">
         <div id="introduction">
-            <h1 id="impact-text">The <span class="secondary-font">art</span> of &ltcoding&gt</h1>
+            <h1 id="impact-text">
+                <span class="word"><span>The</span></span>
+                <span class="word secondary-font italic highlighted-text"><span>art</span></span>
+                <span class="word"><span>of</span></span>
+                <span class="word"><span>&ltcoding&gt</span></span>
+            </h1>
         </div>
         <div id="scritta-lato1">
             <p class="testo-verticale jp-font">私は私なりのやり方でやる</p>
@@ -69,18 +74,19 @@
         <div id="scritta-lato2">
             <p class="testo-verticale secondary-font">I do it in my way</p>
         </div>
-    </div>
+    </section>
 
     <!--sezione frase effetto-->
     <section class="frase-section">
         <div class="frase-effetto">
-            <h1 class="title-font" id="riga1">Design, Codice, Creatività. Tutto parte da qui.</h1>
+            <h1 class="title-font" id="riga1"><span class="italic secondary-font">Design,</span> Codice, <span class="italic secondary-font">Creatività</span>. Tutto parte da qui.</h1>
         </div>
     </section>
 
     <!--collegamenti x js e gsap-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
     <script src="src/js/animation/intro.js"></script>
     <script src="src/js/main.js"></script>
     

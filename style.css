@@ -194,9 +194,15 @@ ul li a {
     line-height: .9;
     text-transform: lowercase;
 }
-#impact-text > span{
-    font-style: italic;
-    color: var(--highlight);
+#impact-text{
+    height: 100%;
+}
+.word {
+    overflow: hidden;
+    display: inline-block;
+}
+.word span{
+    display: inline-block;
 }
 #scritta-lato1{
     position: absolute;

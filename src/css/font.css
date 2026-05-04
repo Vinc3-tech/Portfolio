@@ -20,3 +20,11 @@
   font-style: normal;
   font-size: 2rem;
 }
+
+.italic{
+  font-style: italic;
+}
+
+.highlighted-text {
+  color: var(--highlight);
+}
