@@ -15,6 +15,28 @@ document.fonts.ready.then(() => {
     });
 });
 
+// menu
+const btnCloseMenu = document.getElementById("btn-close");
+const btnOpenMenu = document.getElementById("menu");
+
+btnOpenMenu.addEventListener("click", () => {   //apri menu
+  gsap.to(".menu", {
+    y: "0%",
+    duration: 1.5,
+    ease: "power4.inOut"
+  });
+  document.documentElement.style.overflow = 'hidden';
+});
+
+btnCloseMenu.addEventListener("click", () => {   //chiudi menu
+  gsap.to(".menu", {
+    y: "-100%",
+    duration: 1.5,
+    ease: "power4.inOut"
+  });
+  document.documentElement.style.overflow = 'auto';
+});
+
 // Frase scrollante
 const frase = document.querySelector('#riga1 span');
 const effetto = document.querySelector('.frase-effetto');
