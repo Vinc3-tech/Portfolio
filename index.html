@@ -26,10 +26,8 @@
         <div class="zona-centro">
             <div id="linea">
                 <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- metà destra: dal centro verso destra -->
-                    <line class="line-right" x1="50%" y1="50%" x2="100%" y2="50%" stroke="var(--highlight-2)" stroke-width="3"/>
-                    <!-- metà sinistra: dal centro verso sinistra -->
-                    <line class="line-left" x1="50%" y1="50%" x2="0%" y2="50%" stroke="var(--highlight-2)" stroke-width="3"/>
+                    <line class="line-right" x1="50%" y1="50%" x2="100%" y2="50%" stroke="var(--highlight-2)" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/>
+                    <line class="line-left" x1="50%" y1="50%" x2="0%" y2="50%" stroke="var(--highlight-2)" stroke-width="3" stroke-dasharray="100" stroke-dashoffset="100"/>
                 </svg>
             </div>
             <div id="circle">
@@ -45,7 +43,7 @@
         </div>
 
         <div class="zona-sotto">
-            <div id="percentuale-caricamento">100%</div>
+            <div id="percentuale-caricamento">0%</div>
         </div>
     </section>
 

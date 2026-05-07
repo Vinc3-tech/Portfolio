@@ -19,6 +19,7 @@ document.fonts.ready.then(() => {
 const btnCloseMenu = document.getElementById("btn-close");
 const btnOpenMenu = document.getElementById("menu");
 
+//menu
 btnOpenMenu.addEventListener("click", () => {   //apri menu
   gsap.to(".menu", {
     y: "0%",
