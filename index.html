@@ -50,31 +50,38 @@
     <!--menù-->
     <div class="menu">
         <ul>
-            <li id="voce" class="title-font"><a href="">index</a></li>
-            <li id="voce" class="title-font"><a href="">my work</a></li>
-            <li id="voce" class="title-font"><a href="">about me</a></li>
-            <li id="voce" class="title-font"><a href="">contacts</a></li>
+            <li class="voce title-font"><a href="#hero-section">index</a></li>
+            <li class="voce title-font"><a href="">my work</a></li>
+            <li class="voce title-font"><a href="#about-me-section">about me</a></li>
+            <li class="voce title-font"><a href="">contacts</a></li>
         </ul>
         <button id="btn-close" class="secondary-font">Close</button>
     </div>
 
     <!--navbar-->
-    <navbar class="navbar secondary-font">
+    <nav class="navbar secondary-font">
         <span id="scritte_centrali">{ Frontend developer / web-designer }</span>
         <ul>
             <li id="logo"><a href="#">Vincenzo Venturino</a></li>
             <li id="menu"><a href="#menu">Menù</a></li>
         </ul>
-    </navbar>
+    </nav>
 
     <!--hero page-->
-    <section class="hero-section title-font">
+    <section id="hero-section" class="hero-section title-font">
         <div id="introduction">
             <h1 id="impact-text">
                 <span class="word"><span>The</span></span>
                 <span class="word secondary-font italic highlighted-text"><span>art</span></span>
                 <span class="word"><span>of</span></span>
-                <span class="word"><span>&ltcoding&gt</span></span>
+                <span class="word coding">
+                    <span>&ltcoding&gt</span>
+                    <div id="loghi">
+                        <img src="src/img/logo-html.png" alt="logo-html" class="logo">
+                        <img src="src/img/logo-css.png" alt="logo-css" class="logo">
+                        <img src="src/img/logo-js.png" alt="logo-js" class="logo">
+                    </div>
+                </span>
             </h1>
         </div>
         <div id="scritta-lato1">
@@ -89,6 +96,19 @@
     <section class="frase-section">
         <div class="frase-effetto">
             <h1 class="title-font" id="riga1"><span class="italic secondary-font">Design,</span> Codice, <span class="italic secondary-font">Creatività</span>. Tutto parte da qui.</h1>
+        </div>
+    </section>
+
+    <!--section about me-->
+    <section id="about-me-section">
+        <div id="aboutMe">
+            <h1 class="secondary-font italic highlighted-text">About Me</h1>
+        </div>
+        <div id="text-aboutMe" class="text-font">
+            <p>Mi chiamo Vincenzo, ho 17 anni e sono uno studente del liceo scientifico con una grande passione per tutto ciò che si può costruire — che sia una pagina web, un circuito Arduino o un'idea.</p>
+            <p>Sono una persona tendenzialmente riservata, ma ci tengo alle persone intorno a me. Mi piace il design tanto quanto il codice: non mi basta che qualcosa funzioni, voglio che sia anche bello.</p>
+            <p>I giapponesi hanno un concetto per questo: monozukuri (物作り) — l'arte di fare le cose con cura e dedizione. È una parola che sento mia. Che si tratti di un sito, di un circuito o di una battuta al momento giusto, ci metto sempre qualcosa di personale.</p>
+            <p>Sono affascinato dalla cultura giapponese, dal gaming e da tutto il mondo tech — mondi diversi che per me hanno tutti la stessa radice: la cura nel fare le cose.</p>
         </div>
     </section>
 

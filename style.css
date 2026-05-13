@@ -3,6 +3,7 @@ html, body{
     width: 100%;
     height: 100%;
     background-color: var(--sfondo-primario);
+    scroll-behavior: smooth;
 }
 .testo-verticale {
   writing-mode: vertical-rl;
@@ -22,7 +23,7 @@ html, body{
     top: 0;
     left: 0;
     z-index: 10;
-    /*display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
+    display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
 }
 .zona-centro{
     display: flex;
@@ -137,12 +138,12 @@ html, body{
     align-items: center;
     justify-content: center;
 }
-#voce{
+.voce{
     text-transform: uppercase;
     font-size: 8rem;
     padding: 0;
 }
-#voce a {
+.voce a {
     text-decoration: none;
     color: var(--sfondo-primario);
     text-align: center;
@@ -230,6 +231,32 @@ ul #menu a, ul #logo a {
 .word span{
     display: inline-block;
 }
+#loghi{
+    position: absolute;
+    top: 67%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: top center;
+    justify-content: center;
+}
+.logo{
+    width: 50px;
+    transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 0;
+}
+.coding:hover #loghi .logo:nth-child(1){
+    transform: translate(-70px, 70px) rotate(-20deg) scale(1.5);
+    opacity: 1;
+}
+.coding:hover #loghi .logo:nth-child(2){
+    transform: translate(70px, -70px) rotate(20deg) scale(1.1);
+    opacity: 1;
+}
+.coding:hover #loghi .logo:nth-child(3){
+    transform: translate(70px, 70px) rotate(30deg) scale(1.3);
+    opacity: 1;
+}
 #scritta-lato1{
     position: absolute;
     top: 50%;
@@ -246,16 +273,52 @@ ul #menu a, ul #logo a {
     font-size: 2rem;
 }
 
-/*sezione frase effetto*/
+/*-------------------------------sezione frase effetto-------------------------------------*/
 .frase-section{
     display: flex;
     justify-content: start;
     align-items: top;
-    height: 100%;
+    height: 80%;
 }
 .frase-effetto{
     overflow: visible;
     white-space: nowrap;
     font-size: 6rem;
     padding: 100px;
+}
+
+/*--------------------------about me section-------------------------------------------*/
+#about-me-section{
+    width: 80%;
+    height: 70%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+}
+#about-me-section::before {
+    content: "匠";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 40rem;
+    color: var(--highlight);
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
+}
+#aboutMe{
+    text-align: right;
+    padding: 0 50px;
+    font-size: 4rem;
+}
+#aboutMe h1{
+    margin: 0;
+}
+#text-aboutMe{
+    width: 50%;
+    font-size: 1.5rem;
 }

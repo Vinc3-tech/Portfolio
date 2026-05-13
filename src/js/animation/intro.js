@@ -46,9 +46,6 @@ tl.to(percent, {
         document.getElementById("percentuale-caricamento").textContent = Math.round(percent.value) + "%";
     },
     ease: "power3.inOut",
-    onComplete: () => {
-        document.documentElement.style.overflow = 'auto';
-    }
 });
 
 tl.addLabel("linee");
@@ -63,7 +60,10 @@ tl.to('.line-right, .line-left', {
 tl.to(".loading-section", {
     y: "-100%",
     duration: 1.5,
-    ease: "power4.inOut"
+    ease: "power4.inOut",
+    onComplete: () => {
+        document.documentElement.style.overflow = 'auto';
+    }
 });
 tl.to(".loading-section", {
     autoAlpha: 0

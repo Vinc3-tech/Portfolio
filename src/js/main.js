@@ -19,23 +19,43 @@ document.fonts.ready.then(() => {
 const btnCloseMenu = document.getElementById("btn-close");
 const btnOpenMenu = document.getElementById("menu");
 
-//menu
-btnOpenMenu.addEventListener("click", () => {   //apri menu
+//funzione per aprire il menu
+function apriMenu() {
   gsap.to(".menu", {
     y: "0%",
     duration: 1.5,
-    ease: "power4.inOut"
+    ease: "power4.inOut",
+    onComplete: () => {
+      document.documentElement.style.overflow = 'hidden';
+    }
   });
-  document.documentElement.style.overflow = 'hidden';
-});
-
-btnCloseMenu.addEventListener("click", () => {   //chiudi menu
+}
+// Funzione per chiudere il menu
+function chiudiMenu() {
   gsap.to(".menu", {
     y: "-100%",
     duration: 1.5,
-    ease: "power4.inOut"
+    ease: "power4.inOut",
+    onComplete: () => {
+      document.documentElement.style.overflow = 'auto';
+    }
   });
-  document.documentElement.style.overflow = 'auto';
+}
+
+btnOpenMenu.addEventListener("click", () => {   //apri menu
+  apriMenu();
+});
+btnCloseMenu.addEventListener("click", () => {   //chiudi menu
+  chiudiMenu();
+});
+
+//al click di un link - chiudi menu e overflow = auto
+let link = document.querySelectorAll('.voce a');
+link.forEach(el => {
+  el.addEventListener("click", ()=>{
+    chiudiMenu();
+    document.documentElement.style.overflow = 'auto';
+  });
 });
 
 // Frase scrollante
@@ -55,7 +75,7 @@ gsap.to('.frase-effetto', {
 });
 
 //--------------------da risolvere------------------------------
-const observer = new IntersectionObserver(entries => {
+/*const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       gsap.fromTo(entry, {
@@ -67,4 +87,4 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
-observer.observe(frase);
+observer.observe(frase);*/
