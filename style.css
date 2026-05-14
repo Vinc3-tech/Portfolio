@@ -23,7 +23,7 @@ html, body{
     top: 0;
     left: 0;
     z-index: 10;
-    display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
+    /*display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
 }
 .zona-centro{
     display: flex;
@@ -123,7 +123,7 @@ html, body{
     font-size: 3rem;
 }
 
-/*------------------------menù------------------------------*/
+/*-------------------------------menù------------------------------------*/
 .menu{
     position: absolute;
     top: 0;
@@ -230,6 +230,7 @@ ul #menu a, ul #logo a {
 }
 .word span{
     display: inline-block;
+    transform: translateY(100%);
 }
 #loghi{
     position: absolute;
@@ -321,4 +322,7 @@ ul #menu a, ul #logo a {
 #text-aboutMe{
     width: 50%;
     font-size: 1.5rem;
+}
+.parent{
+    overflow: hidden;
 }

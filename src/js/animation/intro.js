@@ -63,6 +63,15 @@ tl.to(".loading-section", {
     ease: "power4.inOut",
     onComplete: () => {
         document.documentElement.style.overflow = 'auto';
+        // Hero page
+        document.fonts.ready.then(() => {
+            gsap.to('.word span', {
+                y: "0%",
+                duration: 0.8,
+                stagger: 0.12,
+                ease: "power4.inOut",
+            });
+        });
     }
 });
 tl.to(".loading-section", {
