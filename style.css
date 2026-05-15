@@ -10,6 +10,10 @@ html, body{
   text-orientation: mixed;
 }
 
+.parent{
+    overflow: hidden;
+}
+
 /*-------------------------------loading section---------------------------*/
 .loading-section{
     display: flex;
@@ -23,7 +27,7 @@ html, body{
     top: 0;
     left: 0;
     z-index: 10;
-    /*display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
+    display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
 }
 .zona-centro{
     display: flex;
@@ -168,7 +172,7 @@ html, body{
 .navbar{
     position: absolute;
     width: 100%;
-    color: var(--testo-priamrio);
+    color: var(--testo-primario);
     font-size: 1.5rem;
     z-index: 2;
 }
@@ -189,7 +193,7 @@ ul #menu a, ul #logo a {
     text-align: center;
     padding: 20px 22px;
     text-decoration: none;
-    color: var(--testo-priamrio);
+    color: var(--testo-primario);
 }
 #scritte_centrali{
     text-align: center;
@@ -275,12 +279,14 @@ ul #menu a, ul #logo a {
     font-size: 2rem;
 }
 
-/*-------------------------------sezione frase effetto-------------------------------------*/
+/*--------------------------- sezione frase effetto -----------------------------*/
 .frase-section{
     display: flex;
     justify-content: start;
     align-items: top;
     height: 80%;
+    background-color: var(--sfondo-secondario);
+    color: var(--testo-chiaro);
 }
 .frase-effetto{
     overflow: visible;
@@ -289,7 +295,7 @@ ul #menu a, ul #logo a {
     padding: 100px;
 }
 
-/*--------------------------about me section-------------------------------------------*/
+/*-------------------------- about me section -----------------------------------*/
 #about-me-section{
     width: 80%;
     height: 70%;
@@ -298,6 +304,7 @@ ul #menu a, ul #logo a {
     justify-content: center;
     margin: auto;
     position: relative;
+    padding-top: 300px;
 }
 #about-me-section::before {
     content: "匠";
@@ -324,6 +331,25 @@ ul #menu a, ul #logo a {
     width: 50%;
     font-size: 1.5rem;
 }
-.parent{
-    overflow: hidden;
+
+/*--------------------------- contact section ----------------------------*/
+#contact-section{
+    width: 100%;
+    height: 100%;
+    background-color: var(--sfondo-secondario);
+    color: var(--testo-chiaro);
+    text-align: center;
+    position: relative;
+}
+#contact-me{
+    font-size: 17rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    line-height: .8;
+}
+#touch-word{
+    font-size: 30rem;
 }

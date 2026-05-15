@@ -1,8 +1,10 @@
 /*palette di colori*/
-:root{
+:root {
 
     --sfondo-primario: #F5F0E8;
-    --testo-priamrio: #1C1C1C;
+    --sfondo-secondario: #1A1A2E;
+    --testo-primario: #1C1C1C;
+    --testo-chiaro: #F5F0E8;
     --highlight: #C0392B;
     --dettagli: #B8860B;
     --highlight-2: #2C3E6B;
