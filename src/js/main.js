@@ -37,7 +37,9 @@ function apriMenu() {
     ease: "power4.inOut",
     onComplete: () => {
       document.documentElement.style.overflow = 'hidden';
-      //document.querySelector('.menu').parentElement.style.overflow = 'auto';
+      document.querySelectorAll('.voce').forEach(el => {
+        el.style.display = "flex";
+      })
       ObserveEl();
     }
   });
@@ -50,6 +52,9 @@ function chiudiMenu() {
     ease: "power4.inOut",
     onComplete: () => {
       document.documentElement.style.overflow = 'auto';
+      document.querySelectorAll('.voce').forEach(el => {
+        el.style.display = "none";
+      })
       ObserveEl();
     }
   });

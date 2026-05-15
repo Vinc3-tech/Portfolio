@@ -142,11 +142,12 @@ html, body{
     text-transform: uppercase;
     font-size: 8rem;
     padding: 0;
+    display: none;
+    justify-content: center;
 }
 .voce a {
     text-decoration: none;
     color: var(--sfondo-primario);
-    text-align: center;
     display: block;
 }
 #btn-close{
