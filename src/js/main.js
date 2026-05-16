@@ -25,7 +25,7 @@ ObserveEl();
 function OnScreenAnimation(el) {      //funzione per l'animazione degli elementi in entrata
     const textSplitted = new SplitText(el, { type: "lines,chars" });
     let tl = gsap.timeline({
-        onComplete: () => textSplitted.revert()  // ← ripristina il DOM originale
+        onComplete: () => textSplitted.revert()  //ripristina il DOM originale
     });
 
     tl.from(textSplitted.chars, {
@@ -137,7 +137,7 @@ const effetto = document.querySelector('.frase-effetto');
 const sezione = document.querySelector('.frase-section');
 const distanza = effetto.offsetWidth - sezione.offsetWidth;
 
-gsap.to('.frase-effetto', {
+gsap.to(effetto, {
     x: -distanza,
     ease: 'linear',
     scrollTrigger: {
@@ -148,38 +148,29 @@ gsap.to('.frase-effetto', {
     }
 });
 
-/*
-const elemento = document.querySelector('.row');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
+// -------------------- work section's animation -----------------------------
+const workCard = document.querySelectorAll('.card-work');
+const Worksection = document.getElementById("work-section")
 
-      const textSplitted = new SplitText(entry.target, { type: "lines,chars" });
+let Worktl = gsap.timeline({    //timeline animazione lavori - my works section
+  scrollTrigger: {
+    trigger: Worksection,
+    scrub: 1,
+    start: "top top",
+    end: "+=2000",
+    pin: Worksection,
+  }
+})
 
-      let tl = gsap.timeline({
-          onComplete: () => textSplitted.revert()  //ripristina il DOM originale
-      });
-      tl.from(textSplitted.chars, {
-          y: "80%",
-          duration: 0.5,
-          stagger: 0.01,
-          ease: "expo.out",
-          delay: 0.4,
-      });
-      tl.from(textSplitted.lines, {
-        scale: .95,
-        duration: .5,
-        delay: .2,
-      }, "intro-char")
-      tl.to(textSplitted.lines, {
-        scale: 1,
-        delay: .4
-      }, "intro-char")
-
-    }
+let i = 0;
+workCard.forEach(card => {    //animazione delle singole card
+  Worktl.fromTo(card, {
+    scale: i==0 ? 1 : 1.1,
+    y: `${i * 100}%`,
+  }, {
+    y: `${i * -100}%`,
+    scale: 1,
   });
-}, {
-  threshold: 1.0
+  i++;
 });
-observer.observe(elemento);*/

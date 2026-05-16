@@ -11,7 +11,7 @@ html, body{
 }
 
 .parent{
-    overflow: hidden;
+    overflow-y: hidden;
 }
 
 /*-------------------------------loading section---------------------------*/
@@ -285,6 +285,7 @@ ul #menu a, ul #logo a {
     justify-content: start;
     align-items: top;
     height: 80%;
+    width: 100%;
     background-color: var(--sfondo-secondario);
     color: var(--testo-chiaro);
 }
@@ -293,6 +294,43 @@ ul #menu a, ul #logo a {
     white-space: nowrap;
     font-size: 6rem;
     padding: 100px;
+}
+
+/* --------------------------- work section ------------------------------------ */
+#work-section{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: var(--sfondo-secondario);
+}
+#card-container{
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    padding: 100px;
+}
+.card-work{
+    background-color: var(--sfondo-primario);
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.works-word{
+    font-size: 2rem;
+    color: var(--testo-chiaro);
+}
+#work1{
+    background-color: blue;
+}
+#work2{
+    background-color: red;
+}
+#work3{
+    background-color: green;
 }
 
 /*-------------------------- about me section -----------------------------------*/
