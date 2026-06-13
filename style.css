@@ -1,9 +1,16 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
 html, body{
     margin: 0;
     width: 100%;
     height: 100%;
     background-color: var(--sfondo-primario);
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 .testo-verticale {
   writing-mode: vertical-rl;
@@ -31,7 +38,7 @@ html, body{
     top: 0;
     left: 0;
     z-index: 10;
-    /*display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
+    display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
 }
 .zona-centro{
     display: flex;
@@ -63,6 +70,10 @@ html, body{
     z-index: 12;
     transform-origin: center center;
 }
+#circle svg{
+    width: min(70vw, 500px);
+    height: auto;
+}
 #linea svg {
     width: 100%;
     height: 100%;
@@ -78,7 +89,7 @@ html, body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 35%;
+    width: min(90vw, 640px);
     height: 40%;
 }
 #madeBy-text, #title-caricamento, #loading-text{
@@ -87,7 +98,7 @@ html, body{
 #madeBy-text{
     text-align: right;
     margin: 1rem;
-    font-size: 2.5rem;
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
     line-height: 1;
     bottom: 0;
     right: 0;
@@ -95,12 +106,12 @@ html, body{
 #title-caricamento{
     text-align: center;
     margin: 0.5rem 0;
-    font-size: 10rem;
+    font-size: clamp(4rem, 16vw, 10rem);
 }
 #loading-text{
     text-align: left;
     margin: 1rem;
-    font-size: 2.5rem;
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
     left: 0;
     top: 0;
 }
@@ -121,14 +132,14 @@ html, body{
     bottom: 0;
     left: 0;
     margin: 10px;
-    font-size: 8rem;
+    font-size: clamp(3rem, 13vw, 8rem);
 }
 #print{
     position: absolute;
     top: 0;
     right: 0;
     margin: 10px;
-    font-size: 3rem;
+    font-size: clamp(1.4rem, 5vw, 3rem);
 }
 
 /*-------------------------------menù------------------------------------*/
@@ -138,7 +149,7 @@ html, body{
     left: 0;
     transform: translateY(-100%);
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background-color: var(--highlight-2);
     z-index: 100;
     color: var(--sfondo-primario);
@@ -148,7 +159,7 @@ html, body{
 }
 .voce{
     text-transform: uppercase;
-    font-size: 8rem;
+    font-size: clamp(3rem, 12vw, 8rem);
     padding: 0;
     display: none;
     justify-content: center;
@@ -178,7 +189,7 @@ html, body{
     position: absolute;
     width: 100%;
     color: var(--testo-primario);
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
     z-index: 2;
 }
 ul {
@@ -196,7 +207,7 @@ ul #logo{
 ul #menu a, ul #logo a {
     display: block;
     text-align: center;
-    padding: 20px 22px;
+    padding: clamp(14px, 2.5vw, 20px) clamp(14px, 3vw, 22px);
     text-decoration: none;
     color: var(--testo-primario);
 }
@@ -206,12 +217,13 @@ ul #menu a, ul #logo a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    white-space: nowrap;
 }
 
 /*---------------------------hero section--------------------------*/
 .hero-section{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: relative;
     top: 0;
     left: 0;
@@ -222,7 +234,7 @@ ul #menu a, ul #logo a {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 7rem;
+    font-size: clamp(11rem, 9vw, 7rem);
     text-align: center;
     position: absolute;
     top: 50%;
@@ -230,6 +242,7 @@ ul #menu a, ul #logo a {
     transform: translate(-50%, -50%);
     line-height: .9;
     text-transform: lowercase;
+    width: min(92vw, 1200px);
 }
 #impact-text{
     height: 100%;
@@ -250,11 +263,11 @@ ul #menu a, ul #logo a {
     left: 50%;
     transform: translate(-50%, -50%);
     display: flex;
-    align-items: top center;
+    align-items: center;
     justify-content: center;
 }
 .logo{
-    width: 50px;
+    width: clamp(32px, 6vw, 50px);
     transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
     opacity: 0;
 }
@@ -283,48 +296,57 @@ ul #menu a, ul #logo a {
     right: 0;
     transform: translateY(-50%);
     padding: 10px;
-    font-size: 2rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
 }
 
 /*--------------------------- sezione frase effetto -----------------------------*/
 .frase-section{
     display: flex;
     justify-content: start;
-    align-items: top;
-    height: 80%;
+    align-items: center;
+    min-height: 80vh;
     width: 100%;
     background-color: var(--sfondo-secondario);
     color: var(--testo-chiaro);
+    overflow: clip;
 }
 .frase-effetto{
     overflow: visible;
     white-space: nowrap;
-    font-size: 6rem;
-    padding: 100px;
+    width: max-content;
+    max-width: none;
+    font-size: clamp(2.7rem, 8vw, 6rem);
+    padding: clamp(56px, 10vw, 100px);
+}
+
+.frase-effetto h1{
+    display: inline-block;
+    margin: 0;
 }
 
 /* --------------------------- work section ------------------------------------ */
 #work-section{
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     position: relative;
     background-color: var(--sfondo-secondario);
+    overflow: clip;
 }
 #card-container{
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow: hidden;
-    padding: 100px;
+    overflow: clip;
+    padding: clamp(32px, 8vw, 100px);
 }
 .card-work{
     background-color: var(--sfondo-primario);
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 8px;
 }
 .works-word{
     font-size: 2rem;
@@ -342,14 +364,15 @@ ul #menu a, ul #logo a {
 
 /*-------------------------- about me section -----------------------------------*/
 #about-me-section{
-    width: 80%;
-    height: 70%;
+    width: min(80%, 1200px);
+    min-height: 70vh;
     display: flex;
     align-items: start;
     justify-content: center;
     margin: auto;
     position: relative;
-    padding-top: 300px;
+    padding-top: clamp(120px, 18vw, 300px);
+    padding-bottom: clamp(80px, 12vw, 180px);
 }
 #about-me-section::before {
     content: "匠";
@@ -358,7 +381,7 @@ ul #menu a, ul #logo a {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: "Noto Sans JP", sans-serif;
-    font-size: 40rem;
+    font-size: clamp(16rem, 45vw, 40rem);
     color: var(--highlight);
     opacity: 0.1;
     z-index: 0;
@@ -366,28 +389,29 @@ ul #menu a, ul #logo a {
 }
 #aboutMe{
     text-align: right;
-    padding: 0 50px;
-    font-size: 4rem;
+    padding: 0 clamp(24px, 5vw, 50px);
+    font-size: clamp(2.5rem, 6vw, 4rem);
 }
 #aboutMe h1{
     margin: 0;
 }
 #text-aboutMe{
     width: 50%;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    line-height: 1.55;
 }
 
 /*--------------------------- contact section ----------------------------*/
 #contact-section{
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     background-color: var(--sfondo-secondario);
     color: var(--testo-chiaro);
     text-align: center;
     position: relative;
 }
 #contact-me{
-    font-size: 17rem;
+    font-size: clamp(5rem, 16vw, 17rem);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -405,7 +429,7 @@ ul #menu a, ul #logo a {
     transform-origin: center center;
 }
 #touch-word{
-    font-size: 30rem;
+    font-size: clamp(7.5rem, 28vw, 30rem);
 }
 #contact-links{
     position: absolute;
@@ -431,4 +455,154 @@ ul #menu a, ul #logo a {
   border-left: 1.5px solid var(--sfondo-primario);
   height: 70px;
   margin: 5px 0;
+}
+
+@media (max-width: 900px){      /*tablet*/
+    #scritte_centrali{
+        display: none;
+    }
+
+    #introduction{
+        width: min(86vw, 720px);
+    }
+
+    .frase-section{
+        min-height: 70vh;
+    }
+
+    #about-me-section{
+        width: min(88%, 720px);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #aboutMe{
+        flex: none;
+        text-align: left;
+        padding: 0 0 32px;
+    }
+
+    #text-aboutMe{
+        width: 100%;
+    }
+
+    #card-container{
+        width: min(86%, 720px);
+    }
+}
+
+@media (max-width: 600px){      /*telefono*/
+    .navbar ul{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul #menu,
+    ul #logo{
+        float: none;
+    }
+
+    #introduction{
+        font-size: clamp(2.5rem, 17vw, 4.5rem);
+    }
+
+    #scritta-lato1,
+    #scritta-lato2{
+        display: none;
+    }
+
+    #loghi{
+        top: 74%;
+    }
+
+    .coding:hover #loghi .logo:nth-child(1){
+        transform: translate(-42px, 48px) rotate(-20deg) scale(1.25);
+    }
+
+    .coding:hover #loghi .logo:nth-child(2){
+        transform: translate(42px, -48px) rotate(20deg) scale(1.05);
+    }
+
+    .coding:hover #loghi .logo:nth-child(3){
+        transform: translate(44px, 48px) rotate(30deg) scale(1.15);
+    }
+
+    .frase-effetto{
+        padding-inline: 24px;
+    }
+
+    #work-section{
+        padding-block: 64px;
+    }
+
+    #card-container{
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        padding: 24px;
+        margin: 0 auto;
+        overflow: visible;
+        display: grid;
+        gap: 18px;
+    }
+
+    .card-work{
+        min-height: 220px;
+        aspect-ratio: 4 / 3;
+    }
+
+    #about-me-section{
+        width: 88%;
+        padding-top: 96px;
+    }
+
+    #about-me-section::before{
+        top: 38%;
+    }
+
+    #contact-links{
+        inset: auto 0 28px 0;
+        height: auto;
+        flex-direction: row;
+        margin: 0;
+    }
+
+    .linea-verticale {
+        border-left: 0;
+        border-top: 1.5px solid var(--sfondo-primario);
+        width: 56px;
+        height: 0;
+        margin: 0 4px;
+    }
+}
+
+@media (max-width: 420px){
+    .voce{
+        font-size: clamp(2.35rem, 15vw, 3rem);
+    }
+
+    #title-caricamento{
+        font-size: 3.2rem;
+    }
+
+    #madeBy-text,
+    #loading-text{
+        margin: .5rem;
+    }
+
+    #print{
+        max-width: 90%;
+        overflow-wrap: anywhere;
+    }
+
+    #contact-me{
+        font-size: clamp(4rem, 18vw, 5rem);
+    }
+
+    #touch-word{
+        font-size: clamp(6rem, 34vw, 7.5rem);
+    }
 }

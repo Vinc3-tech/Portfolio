@@ -112,7 +112,7 @@ function LeaveText(elem) {    //funzione leave text
   })
 }
 
-const tl_menu = gsap.timeline();  //creazione della timeline per il menu
+let tl_menu;  //timeline per il menu
 function apriMenu() {        //funzione per aprire il menu
   gsap.to(".menu", {
     y: "0%",
@@ -120,12 +120,22 @@ function apriMenu() {        //funzione per aprire il menu
     ease: "power4.inOut",
     onComplete: () => {
 
-      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.overflowY = 'hidden';
       document.querySelectorAll('.voce').forEach(el => {
         el.style.display = "flex";
       })
 
+      if (tl_menu) {
+        tl_menu.kill();
+      }
+
+      gsap.set(".voce a", {
+        y: "80%",
+        scale: 1
+      });
+
       // Triggerare manualmente le animazioni dei testi del menu
+      tl_menu = gsap.timeline();
       tl_menu.addLabel("intro-char")
       tl_menu.fromTo(".voce a", {
         y: "80%"
@@ -149,13 +159,15 @@ function apriMenu() {        //funzione per aprire il menu
   });
 }
 function chiudiMenu() {     // Funzione per chiudere il menu
-  tl_menu.reverse();
+  if (tl_menu) {
+    tl_menu.reverse();
+  }
   gsap.to(".menu", {
     y: "-100%",
     duration: 1.5,
     ease: "power4.inOut",
     onComplete: () => {
-      document.documentElement.style.overflow = 'auto';
+      document.documentElement.style.overflowY = 'auto';
       document.querySelectorAll('.voce').forEach(el => {
         el.style.display = "none";
       })
@@ -191,12 +203,12 @@ btnCloseMenu.addEventListener("click", () => {   //chiudi menu
   chiudiMenu();
 });
 
-//al click di un link - chiudi menu e overflow = auto
+//al click di un link - chiudi menu e scroll verticale = auto
 let link = document.querySelectorAll('.voce a');
 link.forEach(el => {
   el.addEventListener("click", ()=>{
     chiudiMenu();
-    document.documentElement.style.overflow = 'auto';
+    document.documentElement.style.overflowY = 'auto';
   });
 });
 
@@ -204,42 +216,59 @@ link.forEach(el => {
 // ---------------- Frase scrollante ---------------------------
 const effetto = document.querySelector('.frase-effetto');
 const sezione = document.querySelector('.frase-section');
-const distanza = effetto.offsetWidth - sezione.offsetWidth;
+
+function getFraseDistance() {
+  return Math.max(0, effetto.scrollWidth - sezione.clientWidth);
+}
 
 gsap.to(effetto, {
-    x: -distanza,
-    ease: 'linear',
-    scrollTrigger: {
-        trigger: '.frase-section',
-        scrub: 1,
-        pin: true,
-        start: "center center"
-    }
+  x: () => -getFraseDistance(),
+  ease: 'none',
+  scrollTrigger: {
+    trigger: sezione,
+    scrub: 1,
+    pin: true,
+    start: "center center",
+    end: () => `+=${Math.max(getFraseDistance(), window.innerHeight * 0.75)}`,
+    invalidateOnRefresh: true,
+    anticipatePin: 1,
+  }
 });
 
 
 // -------------------- work section's animation -----------------------------
 const workCard = document.querySelectorAll('.card-work');
-const Worksection = document.getElementById("work-section")
+const Worksection = document.getElementById("work-section");
+const responsiveAnimations = gsap.matchMedia();
 
-let Worktl = gsap.timeline({    //timeline animazione lavori - my works section
-  scrollTrigger: {
-    trigger: Worksection,
-    scrub: 1,
-    start: "top top",
-    end: "+=2000",
-    pin: Worksection,
-  }
-})
-
-let i = 0;
-workCard.forEach(card => {    //animazione delle singole card
-  Worktl.fromTo(card, {
-    scale: i==0 ? 1 : 1.1,
-    y: `${i * 100}%`,
-  }, {
-    y: `${i * -100}%`,
-    scale: 1,
+responsiveAnimations.add("(min-width: 701px)", () => {
+  let Worktl = gsap.timeline({    //timeline animazione lavori - my works section
+    scrollTrigger: {
+      trigger: Worksection,
+      scrub: 1,
+      start: "top top",
+      end: () => `+=${window.innerHeight * Math.max(workCard.length, 2)}`,
+      pin: Worksection,
+      invalidateOnRefresh: true,
+      anticipatePin: 1,
+    }
   });
-  i++;
+
+  workCard.forEach((card, i) => {    //animazione delle singole card
+    Worktl.fromTo(card, {
+      scale: i == 0 ? 1 : 1.1,
+      y: `${i * 100}%`,
+    }, {
+      y: `${i * -100}%`,
+      scale: 1,
+    });
+  });
+});
+
+responsiveAnimations.add("(max-width: 700px)", () => {
+  gsap.set(workCard, { clearProps: "transform" });
+});
+
+window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
 });

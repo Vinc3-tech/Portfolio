@@ -1,6 +1,6 @@
 /* animazioni al caricamento della pagina */
 
-document.documentElement.style.overflow = 'hidden';     //blocco scroll
+document.documentElement.style.overflowY = 'hidden';     //blocco scroll verticale
 
 const tl = gsap.timeline();
 
@@ -62,7 +62,7 @@ tl.to(".loading-section", {
     duration: 1.5,
     ease: "power4.inOut",
     onComplete: () => {
-        document.documentElement.style.overflow = 'auto';
+        document.documentElement.style.overflowY = 'auto';
         // Hero page
         document.fonts.ready.then(() => {
             gsap.to('.word span', {
