@@ -27,7 +27,7 @@ html, body{
     top: 0;
     left: 0;
     z-index: 10;
-    display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
+    /*display: none;                 /*---------------------OPACITA' SCHERMATA CARICAMENTO--------------------------*/
 }
 .zona-centro{
     display: flex;
@@ -153,6 +153,7 @@ html, body{
     text-decoration: none;
     color: var(--sfondo-primario);
     display: block;
+    transform: translateY(80%);
 }
 #btn-close{
     position: absolute;

@@ -24,9 +24,7 @@ ObserveEl();
 
 function OnScreenAnimation(el) {      //funzione per l'animazione degli elementi in entrata
     const textSplitted = new SplitText(el, { type: "lines,chars" });
-    let tl = gsap.timeline({
-        onComplete: () => textSplitted.revert()  //ripristina il DOM originale
-    });
+    let tl = gsap.timeline();
 
     tl.from(textSplitted.chars, {
         y: "80%",
@@ -69,21 +67,44 @@ function LeaveText(elem) {    //funzione leave text
   })
 }
 
+const tl_menu = gsap.timeline();  //creazione della timeline per il menu
 function apriMenu() {        //funzione per aprire il menu
   gsap.to(".menu", {
     y: "0%",
     duration: 1.5,
     ease: "power4.inOut",
     onComplete: () => {
+
       document.documentElement.style.overflow = 'hidden';
       document.querySelectorAll('.voce').forEach(el => {
         el.style.display = "flex";
       })
-      ObserveEl();
+
+      // Triggerare manualmente le animazioni dei testi del menu
+      tl_menu.addLabel("intro-char")
+      tl_menu.fromTo(".voce a", {
+        y: "80%"
+      }, {
+        y: "0%",
+        duration: 0.8,
+        stagger: 0.08,
+        ease: "power4.out"
+      });
+      tl_menu.from(".voce a", {
+        scale: .95,
+        duration: .5,
+        delay: .2,
+      }, "intro-char")
+      tl_menu.to(".voce a", {
+        scale: 1,
+        delay: .4
+      }, "intro-char")
     }
+
   });
 }
 function chiudiMenu() {     // Funzione per chiudere il menu
+  tl_menu.reverse();
   gsap.to(".menu", {
     y: "-100%",
     duration: 1.5,
@@ -93,8 +114,11 @@ function chiudiMenu() {     // Funzione per chiudere il menu
       document.querySelectorAll('.voce').forEach(el => {
         el.style.display = "none";
       })
-      ObserveEl();
-    }
+      setTimeout(() => {
+        ObserveEl();
+      }, 100);
+    },
+    delay: .4
   });
 }
 // -------------------------- fine funzioni -------------------------- 
