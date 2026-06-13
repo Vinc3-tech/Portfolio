@@ -12,6 +12,10 @@ html, body{
 
 .parent{
     overflow-y: hidden;
+    padding-block: .08em;
+    margin-block: -.08em;
+    padding-inline: .04em;
+    margin-inline: -.04em;
 }
 
 /*-------------------------------loading section---------------------------*/
@@ -233,6 +237,8 @@ ul #menu a, ul #logo a {
 .word {
     overflow: hidden;
     display: inline-block;
+    padding-block: .20em;
+    margin-block: -.20em;
 }
 .word span{
     display: inline-block;
@@ -389,6 +395,40 @@ ul #menu a, ul #logo a {
     width: 100%;
     line-height: .8;
 }
+#contact-me .contact-line{
+    line-height: .8;
+    padding-block: .25em;
+    margin-block: -.25em;
+}
+#contact-me .row{
+    display: inline-block;
+    transform-origin: center center;
+}
 #touch-word{
     font-size: 30rem;
+}
+#contact-links{
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 0 0 20px;
+}
+.contacts svg{
+    width: 40px;
+    height: 40px;
+    transition: all .5s;
+    color: var(--sfondo-primario);
+    margin: 0 10px;
+}
+.contacts svg:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.linea-verticale {
+  border-left: 1.5px solid var(--sfondo-primario);
+  height: 70px;
+  margin: 5px 0;
 }

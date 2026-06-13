@@ -21,9 +21,10 @@ let callback = (entries, observer) => {
 };
 let observer = new IntersectionObserver(callback, options);
 ObserveEl();
+ObserveContactSection();
 
 function OnScreenAnimation(el) {      //funzione per l'animazione degli elementi in entrata
-    const textSplitted = new SplitText(el, { type: "lines,chars" });
+    let textSplitted = new SplitText(el, { type: "lines,chars" });
     let tl = gsap.timeline();
 
     tl.from(textSplitted.chars, {
@@ -50,6 +51,50 @@ function ObserveEl() {        //funzione per controllare gli elementi in entrata
   testo.forEach(element => {
     observer.observe(element);
   });
+}
+
+function ContactAnimation() {   //funzione per l'animazione della contact section
+  let tl = gsap.timeline();
+
+  tl.addLabel("intro-char")
+  tl.fromTo("#contact-me .row", {
+    y: "80%"
+  }, {
+    y: "0%",
+    duration: 0.8,
+    stagger: 0.08,
+    ease: "power4.out"
+  });
+  tl.from("#contact-me .row", {
+    scale: .95,
+    duration: .5,
+    delay: .2,
+  }, "intro-char")
+  tl.to("#contact-me .row", {
+    scale: 1,
+    delay: .4
+  }, "intro-char")
+}
+
+function ObserveContactSection() {
+  const contactContainer = document.getElementById("contact-me");
+  const contactObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        ContactAnimation();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 1
+  });
+
+  gsap.set("#contact-me .row", {
+    y: "80%"
+  });
+  contactObserver.observe(contactContainer);
 }
 
 function HoverText(elem) {    //funzione hover text
