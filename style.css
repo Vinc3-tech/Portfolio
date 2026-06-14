@@ -12,6 +12,11 @@ html, body{
     scroll-behavior: smooth;
     overflow-x: clip;
 }
+::selection{
+    background-color: var(--dettagli);
+    color: var(--testo-chiaro);
+}
+
 .testo-verticale {
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -121,20 +126,20 @@ html, body{
 }
 
 /*-------------------------------menù------------------------------------*/
-.menu{
-    position: absolute;
+#contMenu{
+    position: fixed;
     top: 0;
     left: 0;
     transform: translateY(-100%);
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
     background-color: var(--highlight-2);
-    z-index: 100;
+    z-index: 10;
     color: var(--sfondo-primario);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 5;
+    flex-direction: column;
 }
 .voce{
     text-transform: uppercase;
@@ -149,7 +154,7 @@ html, body{
     display: block;
     transform: translateY(80%);
 }
-#btn-close{
+#btnCloseMenu{
     position: absolute;
     top: 0;
     right: 0;
@@ -159,7 +164,7 @@ html, body{
     color: var(--sfondo-primario);
     font-size: 2rem;
 }
-#btn-close:hover{
+#btnCloseMenu:hover{
     cursor: pointer;
 }
 
@@ -167,17 +172,17 @@ html, body{
 #navbar{
     position: fixed;
     width: 100%;
-    color: var(--testo-primario);
     font-size: clamp(1rem, 2vw, 1.5rem);
     z-index: 2;
-    color: var(--testo-primario);
+    color: var(--sfondo-primario);
+    mix-blend-mode: difference;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 20px;
 }
-#menu{
+#btnOpenMenu{
     cursor: pointer;
 }
 

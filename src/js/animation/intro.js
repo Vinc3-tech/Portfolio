@@ -64,6 +64,6 @@ tl.to(".loadingSection", {
         });
     }
 });
-tl.to(".loading-section", {
+tl.to(".loadingSection", {
     autoAlpha: 0
 })

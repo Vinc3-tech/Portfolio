@@ -36,32 +36,28 @@
     </section>
 
     <!--menù-->
-    <div class="menu">
-        <ul>
-            <li class="voce title-font">
-                <div class="parent"><a href="#hero-section" class="li-menu hover-text">index</a></div>
-            </li>
-            <li class="voce title-font">
-                <div class="parent"><a href="#work-section" class="li-menu hover-text">my work</a></div>
-            </li>
-            <li class="voce title-font">
-                <div class="parent"><a href="#about-me-section" class="li-menu hover-text">about me</a></div>
-            </li>
-            <li class="voce title-font">
-                <div class="parent"><a href="#contact-section" class="li-menu hover-text">contacts</a></div>
-            </li>
-        </ul>
-        <button id="btn-close" class="secondary-font">Close</button>
+    <div id="contMenu" class="title-font">
+        <div class="parent">
+            <span class="voce hoverTextEffect"><a href="#heroSection">index</a></span>
+        </div>
+        <div class="parent">
+            <div class="voce hoverTextEffect"><a href="#workSection">my work</a></div>
+        </div>
+        <div class="parent">
+            <div class="voce hoverTextEffect"><a href="#aboutMeSection">about me</a></div>
+        </div>
+        <div class="parent">
+            <div class="voce hoverTextEffect"><a href="#contactSection">contacts</a></div>
+        </div>
+        <button id="btnCloseMenu" class="secondary-font">Close</button>
     </div>
-
-    <!--TODO: sistemare il menu togliendo la ul/li e facendo in modo che possa comparire in qualsiasi punto della pagina-->
 
     <!--navbar-->
     <nav id="navbar" class="secondary-font">
 
         <div class="align-left">Vincenzo Venturino</div>
         <div>{ Frontend developer / web-designer }</div>
-        <div id="menu" class="align-right">Menù</div>
+        <div id="btnOpenMenu" class="align-right">Menù</div>
 
     </nav>
 

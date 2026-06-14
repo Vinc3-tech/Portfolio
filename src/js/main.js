@@ -114,7 +114,7 @@ function LeaveText(elem) {    //funzione leave text
 
 let tl_menu;  //timeline per il menu
 function apriMenu() {        //funzione per aprire il menu
-  gsap.to(".menu", {
+  gsap.to("#contMenu", {
     y: "0%",
     duration: 1.5,
     ease: "power4.inOut",
@@ -162,7 +162,7 @@ function chiudiMenu() {     // Funzione per chiudere il menu
   if (tl_menu) {
     tl_menu.reverse();
   }
-  gsap.to(".menu", {
+  gsap.to("#contMenu", {
     y: "-100%",
     duration: 1.5,
     ease: "power4.inOut",
@@ -182,7 +182,7 @@ function chiudiMenu() {     // Funzione per chiudere il menu
 
 
 // ----------------------- animazioni testo - hover ------------------
-document.querySelectorAll(".hover-text").forEach(element => {
+document.querySelectorAll(".hoverTextEffect").forEach(element => {
   element.addEventListener("mouseenter", ()=>{
     HoverText(element)
   })
@@ -193,8 +193,8 @@ document.querySelectorAll(".hover-text").forEach(element => {
 
 
 // -------------------------- menu -----------------------------------
-const btnCloseMenu = document.getElementById("btn-close");
-const btnOpenMenu = document.getElementById("menu");
+const btnCloseMenu = document.getElementById("btnCloseMenu");
+const btnOpenMenu = document.getElementById("btnOpenMenu");
 
 btnOpenMenu.addEventListener("click", () => {   //apri menu
   apriMenu();
