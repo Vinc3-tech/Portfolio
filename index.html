@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,32 +13,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
     <!--loading section-->
-    <section class="loading-section">
+    <section class="loadingSection">
 
-        <div class="zona-sopra">
-            <div id="print" class="secondary-font">print("Hello World!!")</div>
+        <div id="printWord" class="secondary-font">print("Hello World!!")</div>
+        <div id="circle">
+            <svg height="500" width="500" xmlns="http://www.w3.org/2000/svg">
+                <circle r="250" cx="250" cy="250" fill="var(--highlight)"/>
+            </svg>
         </div>
+        <div id="loadingTexts">
+            <h3 id="loadingWord" class="secondary-font">Loading...</h3>
+            <h1 id="titleLoadingPortfolio" class="title-font">Portfolio</h1>
+            <h3 id="madeByWord" class="secondary-font"><span>Made by</span><br><span>Vincenzo</span></h3>
+        </div>
+        <div id="percentLoading">0%</div>
 
-        <div class="zona-centro">
-            <div id="circle">
-                <svg height="500" width="500" xmlns="http://www.w3.org/2000/svg">
-                    <circle r="250" cx="250" cy="250" fill="var(--highlight)"/>
-                </svg>
-            </div>
-            <div id="scritte">
-                <h3 id="loading-text" class="secondary-font">Loading...</h3>
-                <h1 id="title-caricamento" class="title-font">Portfolio</h1>
-                <h3 id="madeBy-text" class="secondary-font"><span>Made by</span><br><span>Vincenzo</span></h3>
-            </div>
-        </div>
-
-        <div class="zona-sotto">
-            <div id="percentuale-caricamento">0%</div>
-        </div>
     </section>
 
     <!--menù-->
@@ -60,13 +54,15 @@
         <button id="btn-close" class="secondary-font">Close</button>
     </div>
 
+    <!--TODO: sistemare il menu togliendo la ul/li e facendo in modo che possa comparire in qualsiasi punto della pagina-->
+
     <!--navbar-->
-    <nav class="navbar secondary-font">
-        <span id="scritte_centrali">{ Frontend developer / web-designer }</span>
-        <ul>
-            <li id="logo"><a href="#">Vincenzo Venturino</a></li>
-            <li id="menu"><a href="#menu">Menù</a></li>
-        </ul>
+    <nav id="navbar" class="secondary-font">
+
+        <div class="align-left">Vincenzo Venturino</div>
+        <div>{ Frontend developer / web-designer }</div>
+        <div id="menu" class="align-right">Menù</div>
+
     </nav>
 
     <!--hero page-->
@@ -76,39 +72,32 @@
                 <span class="word"><span>The</span></span>
                 <span class="word secondary-font italic highlighted-text"><span>art</span></span><br>
                 <span class="word"><span>of</span></span>
-                <span class="word coding">
-                    <span>&ltcoding&gt</span>
-                    <div id="loghi">
-                        <img src="src/img/logo-html.png" alt="logo-html" class="logo">
-                        <img src="src/img/logo-css.png" alt="logo-css" class="logo">
-                        <img src="src/img/logo-js.png" alt="logo-js" class="logo">
-                    </div>
-                </span>
+                <span class="word coding"><span>&ltcoding&gt</span></span>
             </div>
         </div>
-        <div id="scritta-lato1">
+        <div id="scritta-lato" class="align-left">
             <p class="testo-verticale jp-font">私は私なりのやり方でやる</p>
         </div>
-        <div id="scritta-lato2">
+        <div id="scritta-lato" class="align-right">
             <p class="testo-verticale secondary-font">I do it in my way</p>
         </div>
     </section>
 
     <!--sezione frase effetto-->
-    <section class="frase-section">
-        <div class="frase-effetto">
-            <h1 class="title-font" id="riga1"><span class="italic secondary-font">Design,</span> Codice, <span class="italic secondary-font">Creatività</span>. Tutto parte da qui.</h1>
+    <section id="fraseSection">
+        <div id="contFrase">
+            <h1 id="frase" class="title-font"><span class="italic secondary-font">Design,</span> Codice, <span class="italic secondary-font">Creatività</span>. Tutto parte da qui.</h1>
         </div>
     </section>
 
     <!--section about me-->
-    <section id="about-me-section">
-        <div id="aboutMe">
+    <section id="aboutMeSection">
+        <div id="contAboutMe">
             <div class="parent">
-                <h1 id="about-me-word" class="secondary-font italic highlighted-text anim-comparsa-testo">About Me</h1>
+                <h1 id="aboutMeTitle" class="secondary-font italic highlighted-text anim-comparsa-testo">About Me</h1>
             </div>
         </div>
-        <div id="text-aboutMe" class="text-font">
+        <div id="aboutMeText" class="text-font">
             <p>Mi chiamo Vincenzo, ho 17 anni e sono uno studente del liceo scientifico con una grande passione per tutto ciò che si può costruire — che sia una pagina web, un circuito Arduino o un'idea.</p>
             <p>Sono una persona tendenzialmente riservata, ma ci tengo alle persone intorno a me. Mi piace il design tanto quanto il codice: non mi basta che qualcosa funzioni, voglio che sia anche bello.</p>
             <p>I giapponesi hanno un concetto per questo: monozukuri (物作り) — l'arte di fare le cose con cura e dedizione. È una parola che sento mia. Che si tratti di un sito, di un circuito o di una battuta al momento giusto, ci metto sempre qualcosa di personale.</p>
@@ -117,28 +106,32 @@
     </section>
 
     <!--works section-->
-    <section id="work-section">
-        <div id="scritta-lato1">
-            <span class="testo-verticale secondary-font works-word">— my works —</span>
+    <section id="workSection">
+        <div id="scritta-lato" class="align-left">
+            <span id="myWorkWord" class="testo-verticale secondary-font">— my works —</span>
         </div>
-        <div id="card-container">
-            <div id="work1" class="card-work"></div>
-            <div id="work2" class="card-work"></div>
-            <div id="work3" class="card-work"></div>
+        <div id="contCard">
+            <div id="work1" class="cardWork"></div>
+            <div id="work2" class="cardWork"></div>
+            <div id="work3" class="cardWork"></div>
         </div>
-        <div id="scritta-lato2">
-            <span class="testo-verticale secondary-font works-word">— my works —</span>
+        <div id="scritta-lato" class="align-right">
+            <span id="myWorkWord" class="testo-verticale secondary-font">— my works —</span>
         </div>
     </section>
 
     <!--contact section-->
-    <section id="contact-section">
-        <div id="contact-me" class="title-font">
-            <div class="parent contact-line"><span class="row">Let's get</span></div>
-            <div class="parent contact-line">
-                <span class="row">in <span class="secondary-font italic" id="touch-word">touch</span></span>
+    <section id="contactSection">
+
+        <div id="contContactMeFrase" class="title-font">
+            <div class="parent contactLine">
+                <span class="rowContact">Let's get</span>
+            </div>
+            <div class="parent contactLine">
+                <span class="rowContact">in <span class="secondary-font italic" id="touchWord">touch</span></span>
             </div>
         </div>
+
         <div id="contact-links">
             <div class="contacts">
                 <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -31.5 256 256" width="50" height="50">
@@ -177,6 +170,7 @@
                 </svg>
             </div>
         </div>
+        
     </section>
 
     <!--collegamenti x js e gsap-->

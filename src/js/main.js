@@ -28,7 +28,7 @@ function OnScreenAnimation(el) {      //funzione per l'animazione degli elementi
     let tl = gsap.timeline();
 
     tl.from(textSplitted.chars, {
-        y: "80%",
+        y: "100%",
         duration: 0.5,
         stagger: 0.01,
         ease: "expo.out",
@@ -57,27 +57,27 @@ function ContactAnimation() {   //funzione per l'animazione della contact sectio
   let tl = gsap.timeline();
 
   tl.addLabel("intro-char")
-  tl.fromTo("#contact-me .row", {
-    y: "80%"
+  tl.fromTo("#contContactMeFrase .rowContact", {
+    y: "100%"
   }, {
     y: "0%",
     duration: 0.8,
     stagger: 0.08,
     ease: "power4.out"
   });
-  tl.from("#contact-me .row", {
+  tl.from("#contContactMeFrase .rowContact", {
     scale: .95,
     duration: .5,
     delay: .2,
   }, "intro-char")
-  tl.to("#contact-me .row", {
+  tl.to("#contContactMeFrase .rowContact", {
     scale: 1,
     delay: .4
   }, "intro-char")
 }
 
 function ObserveContactSection() {
-  const contactContainer = document.getElementById("contact-me");
+  const contactContainer = document.getElementById("contactSection");
   const contactObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -88,11 +88,11 @@ function ObserveContactSection() {
   }, {
     root: null,
     rootMargin: '0px',
-    threshold: 1
+    threshold: .8
   });
 
-  gsap.set("#contact-me .row", {
-    y: "80%"
+  gsap.set("#contContactMeFrase .rowContact", {
+    y: "100%"
   });
   contactObserver.observe(contactContainer);
 }
@@ -130,7 +130,7 @@ function apriMenu() {        //funzione per aprire il menu
       }
 
       gsap.set(".voce a", {
-        y: "80%",
+        y: "100%",
         scale: 1
       });
 
@@ -138,7 +138,7 @@ function apriMenu() {        //funzione per aprire il menu
       tl_menu = gsap.timeline();
       tl_menu.addLabel("intro-char")
       tl_menu.fromTo(".voce a", {
-        y: "80%"
+        y: "100%"
       }, {
         y: "0%",
         duration: 0.8,
@@ -214,8 +214,8 @@ link.forEach(el => {
 
 
 // ---------------- Frase scrollante ---------------------------
-const effetto = document.querySelector('.frase-effetto');
-const sezione = document.querySelector('.frase-section');
+const effetto = document.getElementById('contFrase');
+const sezione = document.getElementById('fraseSection');
 
 function getFraseDistance() {
   return Math.max(0, effetto.scrollWidth - sezione.clientWidth);
@@ -237,8 +237,8 @@ gsap.to(effetto, {
 
 
 // -------------------- work section's animation -----------------------------
-const workCard = document.querySelectorAll('.card-work');
-const Worksection = document.getElementById("work-section");
+const workCard = document.querySelectorAll('.cardWork');
+const Worksection = document.getElementById("workSection");
 const responsiveAnimations = gsap.matchMedia();
 
 responsiveAnimations.add("(min-width: 701px)", () => {

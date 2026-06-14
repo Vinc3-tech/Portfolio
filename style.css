@@ -16,6 +16,12 @@ html, body{
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
+#scritta-lato{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: clamp(1.2rem, 3vw, 2rem);
+}
 
 .parent{
     overflow-y: hidden;
@@ -25,8 +31,19 @@ html, body{
     margin-inline: -.04em;
 }
 
+.align-right{
+    position: absolute;
+    right: 0;
+    margin: 20px;
+}
+.align-left{
+    position: absolute;
+    left: 0;
+    margin: 20px;
+}
+
 /*-------------------------------loading section---------------------------*/
-.loading-section{
+.loadingSection{
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -38,28 +55,7 @@ html, body{
     top: 0;
     left: 0;
     z-index: 10;
-}
-.zona-centro{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    width: 100%;
-    height: 100%;
-}
-#linea{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 11;
-    stroke: var(--highlight-2);
-    stroke-width: 20px;
-    width: 100%;
+    background-color: var(--sfondo-primario);
 }
 #circle{
     position: absolute;
@@ -73,12 +69,7 @@ html, body{
     width: min(70vw, 500px);
     height: auto;
 }
-#linea svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-#scritte{
+#loadingTexts{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -91,10 +82,10 @@ html, body{
     width: min(90vw, 640px);
     height: 40%;
 }
-#madeBy-text, #title-caricamento, #loading-text{
+#madeByWord, #titleLoadingPortfolio, #loadingWord{
     position: absolute;
 }
-#madeBy-text{
+#madeByWord{
     text-align: right;
     margin: 1rem;
     font-size: clamp(1.4rem, 4vw, 2.5rem);
@@ -102,38 +93,26 @@ html, body{
     bottom: 0;
     right: 0;
 }
-#title-caricamento{
+#titleLoadingPortfolio{
     text-align: center;
     margin: 0.5rem 0;
     font-size: clamp(4rem, 16vw, 10rem);
 }
-#loading-text{
+#loadingWord{
     text-align: left;
     margin: 1rem;
     font-size: clamp(1.4rem, 4vw, 2.5rem);
     left: 0;
     top: 0;
 }
-.zona-sopra, .zona-sotto{
-    width: 100%;
-    height: 50vh;
-    position: absolute;
-    background-color: var(--sfondo-primario);
-}
-.zona-sopra{
-    top: 0;
-}
-.zona-sotto{
-    bottom: 0;
-}
-#percentuale-caricamento{
+#percentLoading{
     position: absolute;
     bottom: 0;
     left: 0;
     margin: 10px;
     font-size: clamp(3rem, 13vw, 8rem);
 }
-#print{
+#printWord{
     position: absolute;
     top: 0;
     right: 0;
@@ -155,6 +134,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5;
 }
 .voce{
     text-transform: uppercase;
@@ -184,39 +164,21 @@ html, body{
 }
 
 /*---------------------------navbar---------------------------*/
-.navbar{
-    position: absolute;
+#navbar{
+    position: fixed;
     width: 100%;
     color: var(--testo-primario);
     font-size: clamp(1rem, 2vw, 1.5rem);
     z-index: 2;
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-ul #menu {
-    float: right;
-}
-ul #logo{
-    float: left;
-}
-ul #menu a, ul #logo a {
-    display: block;
-    text-align: center;
-    padding: clamp(14px, 2.5vw, 20px) clamp(14px, 3vw, 22px);
-    text-decoration: none;
     color: var(--testo-primario);
-}
-#scritte_centrali{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    white-space: nowrap;
+    padding: 20px;
+}
+#menu{
+    cursor: pointer;
 }
 
 /*---------------------------hero section--------------------------*/
@@ -254,62 +216,20 @@ ul #menu a, ul #logo a {
 }
 .word span{
     display: inline-block;
-    transform: translateY(100%);
-}
-#loghi{
-    position: absolute;
-    top: 67%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logo{
-    width: clamp(32px, 6vw, 50px);
-    transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-    opacity: 0;
-}
-.coding:hover #loghi .logo:nth-child(1){
-    transform: translate(-70px, 70px) rotate(-20deg) scale(1.5);
-    opacity: 1;
-}
-.coding:hover #loghi .logo:nth-child(2){
-    transform: translate(70px, -70px) rotate(20deg) scale(1.1);
-    opacity: 1;
-}
-.coding:hover #loghi .logo:nth-child(3){
-    transform: translate(70px, 70px) rotate(30deg) scale(1.3);
-    opacity: 1;
-}
-#scritta-lato1{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    padding: 10px;
-}
-#scritta-lato2{
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    padding: 10px;
-    font-size: clamp(1.2rem, 3vw, 2rem);
 }
 
 /*--------------------------- sezione frase effetto -----------------------------*/
-.frase-section{
+#fraseSection{
     display: flex;
     justify-content: start;
     align-items: center;
-    min-height: 80vh;
+    height: 100vh;
     width: 100%;
     background-color: var(--sfondo-secondario);
     color: var(--testo-chiaro);
     overflow: clip;
 }
-.frase-effetto{
+#contFrase{
     overflow: visible;
     white-space: nowrap;
     width: max-content;
@@ -317,52 +237,13 @@ ul #menu a, ul #logo a {
     font-size: clamp(2.7rem, 8vw, 6rem);
     padding: clamp(56px, 10vw, 100px);
 }
-
-.frase-effetto h1{
+#frase{
     display: inline-block;
     margin: 0;
 }
 
-/* --------------------------- work section ------------------------------------ */
-#work-section{
-    width: 100%;
-    min-height: 100vh;
-    position: relative;
-    background-color: var(--sfondo-secondario);
-    overflow: clip;
-}
-#card-container{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: clip;
-    padding: clamp(32px, 8vw, 100px);
-}
-.card-work{
-    background-color: var(--sfondo-primario);
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-}
-.works-word{
-    font-size: 2rem;
-    color: var(--testo-chiaro);
-}
-#work1{
-    background-color: blue;
-}
-#work2{
-    background-color: red;
-}
-#work3{
-    background-color: green;
-}
-
 /*-------------------------- about me section -----------------------------------*/
-#about-me-section{
+#aboutMeSection{
     width: min(80%, 1200px);
     min-height: 70vh;
     display: flex;
@@ -370,10 +251,9 @@ ul #menu a, ul #logo a {
     justify-content: center;
     margin: auto;
     position: relative;
-    padding-top: clamp(120px, 18vw, 300px);
-    padding-bottom: clamp(80px, 12vw, 180px);
+    padding: 100px 0;
 }
-#about-me-section::before {
+#aboutMeSection::before {
     content: "匠";
     position: absolute;
     top: 50%;
@@ -386,22 +266,59 @@ ul #menu a, ul #logo a {
     z-index: 0;
     pointer-events: none;
 }
-#aboutMe{
+#contAboutMe{
     text-align: right;
     padding: 0 clamp(24px, 5vw, 50px);
     font-size: clamp(2.5rem, 6vw, 4rem);
 }
-#aboutMe h1{
+#aboutMeTitle{
     margin: 0;
 }
-#text-aboutMe{
+#aboutMeText{
     width: 50%;
     font-size: clamp(1rem, 2vw, 1.5rem);
-    line-height: 1.55;
+    line-height: 1.5;
+}
+
+/* --------------------------- work section ------------------------------------ */
+#workSection{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--sfondo-secondario);
+    overflow: clip;
+}
+#contCard{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: clip;
+    padding: clamp(32px, 8vw, 100px);
+}
+.cardWork{
+    background-color: var(--sfondo-primario);
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+#myWorkWord{
+    color: var(--testo-chiaro);
+}
+#work1{
+    background-color: blue;
+}
+#work2{
+    background-color: red;
+}
+#work3{
+    background-color: green;
 }
 
 /*--------------------------- contact section ----------------------------*/
-#contact-section{
+#contactSection{
     width: 100%;
     min-height: 100vh;
     background-color: var(--sfondo-secondario);
@@ -409,7 +326,7 @@ ul #menu a, ul #logo a {
     text-align: center;
     position: relative;
 }
-#contact-me{
+#contContactMeFrase{
     font-size: clamp(5rem, 16vw, 17rem);
     position: absolute;
     top: 50%;
@@ -418,16 +335,16 @@ ul #menu a, ul #logo a {
     width: 100%;
     line-height: .8;
 }
-#contact-me .contact-line{
+#contContactMeFrase .contactLine{
     line-height: .8;
     padding-block: .25em;
     margin-block: -.25em;
 }
-#contact-me .row{
+#contContactMeFrase .rowContact{
     display: inline-block;
     transform-origin: center center;
 }
-#touch-word{
+#touchWord{
     font-size: clamp(7.5rem, 28vw, 30rem);
 }
 #contact-links{
