@@ -1,7 +1,7 @@
-/* animazioni al caricamento della pagina */
+//
 
-document.documentElement.style.overflowY = 'hidden';     //blocco scroll verticale
 
+// animazioni al caricamento della pagina
 const tl = gsap.timeline(); //timeline animazione
 const tempoAnimazioneTotale = 3
 const tempoAnimazioneScritte = 1
@@ -45,7 +45,7 @@ tl.to(percent, {
 });
 
 // ------------------------- Fine animazione ----------------------
-tl.to(".loadingSection", {
+tl.to("#loadingSection", {
     y: "-100%",
     duration: 1.5,
     ease: "power4.inOut",

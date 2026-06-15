@@ -18,25 +18,25 @@
 <body>
 
     <!--loading section-->
-    <section class="loadingSection">
+    <section id="loadingSection" class="divStandard">
 
-        <div id="printWord" class="secondary-font">print("Hello World!!")</div>
-        <div id="circle">
+        <div id="printWord" class="secondary-font align-right noTop margin">print("Hello World!!")</div>
+        <div id="circle" class="centerContent">
             <svg height="500" width="500" xmlns="http://www.w3.org/2000/svg">
                 <circle r="250" cx="250" cy="250" fill="var(--highlight)"/>
             </svg>
         </div>
-        <div id="loadingTexts">
-            <h3 id="loadingWord" class="secondary-font">Loading...</h3>
+        <div id="loadingTexts" class="centerContent divStandard">
+            <h3 id="loadingWord" class="secondary-font align-left noTop">Loading...</h3>
             <h1 id="titleLoadingPortfolio" class="title-font">Portfolio</h1>
-            <h3 id="madeByWord" class="secondary-font"><span>Made by</span><br><span>Vincenzo</span></h3>
+            <h3 id="madeByWord" class="secondary-font align-right noBottom">Made by<br>Vincenzo</h3>
         </div>
-        <div id="percentLoading">0%</div>
+        <div id="percentLoading" class="align-left noBottom margin">0%</div>
 
     </section>
 
     <!--menù-->
-    <div id="contMenu" class="title-font">
+    <div id="contMenu" class="title-font divStandard">
         <div class="parent">
             <span class="voce hoverTextEffect"><a href="#heroSection">index</a></span>
         </div>
@@ -49,21 +49,21 @@
         <div class="parent">
             <div class="voce hoverTextEffect"><a href="#contactSection">contacts</a></div>
         </div>
-        <button id="btnCloseMenu" class="secondary-font">Close</button>
+        <button id="btnCloseMenu" class="secondary-font align-right noTop margin">Close</button>
     </div>
 
     <!--navbar-->
-    <nav id="navbar" class="secondary-font">
+    <nav id="navbar" class="secondary-font margin">
 
         <div class="align-left">Vincenzo Venturino</div>
-        <div>{ Frontend developer / web-designer }</div>
+        <div class="centerContent margin">{ Frontend developer / web-designer }</div>
         <div id="btnOpenMenu" class="align-right">Menù</div>
 
     </nav>
 
     <!--hero page-->
     <section id="hero-section" class="hero-section title-font">
-        <div id="introduction">
+        <div id="introduction" class="divStandard centerContent">
             <div id="impact-text">
                 <span class="word"><span>The</span></span>
                 <span class="word secondary-font italic highlighted-text"><span>art</span></span><br>
@@ -106,7 +106,7 @@
         <div id="scritta-lato" class="align-left">
             <span id="myWorkWord" class="testo-verticale secondary-font">— my works —</span>
         </div>
-        <div id="contCard">
+        <div id="contCard" class="centerContent">
             <div id="work1" class="cardWork"></div>
             <div id="work2" class="cardWork"></div>
             <div id="work3" class="cardWork"></div>
@@ -119,7 +119,7 @@
     <!--contact section-->
     <section id="contactSection">
 
-        <div id="contContactMeFrase" class="title-font">
+        <div id="contContactMeFrase" class="title-font centerContent">
             <div class="parent contactLine">
                 <span class="rowContact">Let's get</span>
             </div>
@@ -128,7 +128,7 @@
             </div>
         </div>
 
-        <div id="contact-links">
+        <div id="contact-links" class="divStandard">
             <div class="contacts">
                 <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 -31.5 256 256" width="50" height="50">
                     <g>
