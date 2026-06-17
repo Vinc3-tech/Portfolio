@@ -302,7 +302,6 @@ html, body{
 }
 #contContactMeFrase .rowContact{
     display: inline-block;
-    transform-origin: center center;
 }
 #touchWord{
     font-size: clamp(7.5rem, 28vw, 30rem);
@@ -314,6 +313,10 @@ html, body{
 .contacts{
     margin: var(--margin);
     font-size: 1.2rem;
+}
+.contacts a{
+    text-decoration: none;
+    color: var(--testo-chiaro);
 }
 .contacts svg{
     width: 40px;

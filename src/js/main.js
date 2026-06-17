@@ -245,9 +245,8 @@ responsiveAnimations.add("(min-width: 701px)", () => {
   let Worktl = gsap.timeline({    //timeline animazione lavori - my works section
     scrollTrigger: {
       trigger: Worksection,
-      scrub: 1,
+      scrub: 1.5,
       start: "top top",
-      end: () => `+=${window.innerHeight * Math.max(workCard.length, 2)}`,
       pin: Worksection,
       invalidateOnRefresh: true,
       anticipatePin: 1,

@@ -1,5 +1,3 @@
-//
-
 
 // animazioni al caricamento della pagina
 const tl = gsap.timeline(); //timeline animazione
