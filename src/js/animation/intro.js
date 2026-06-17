@@ -9,8 +9,8 @@ const tempoAnimazioneScritte = 1
 // Animazione infinita del cerchio
 tl.addLabel("intro-cerchio");
 tl.to("#circle", {
-    scale: 1,
-    duration: tempoAnimazioneTotale,
+    scale: 1.2,
+    duration: tempoAnimazioneTotale - .5,
     ease: "power1",
     repeat: -1,
     yoyo: true
