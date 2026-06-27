@@ -100,14 +100,14 @@ function ObserveContactSection() {
 function HoverText(elem) {    //funzione hover text
   gsap.to(elem, {
     y: -8,
-    ease: "power4.inOut",
+    ease: "power2.out",
     duration: .5,
   })
 }
 function LeaveText(elem) {    //funzione leave text
   gsap.to(elem, {
     y: 0,
-    ease: "power4.inOut",
+    ease: "power2.out",
     duration: .5,
   })
 }
