@@ -90,7 +90,7 @@ html, body{
 }
 #madeByWord{
     text-align: right;
-    font-size: clamp(1.4rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 2.5rem);
     line-height: 1;
 }
 #titleLoadingPortfolio{
@@ -100,13 +100,13 @@ html, body{
 }
 #loadingWord{
     text-align: left;
-    font-size: clamp(1.4rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 4vw, 2.5rem);
 }
 #percentLoading{
     font-size: clamp(3rem, 13vw, 8rem);
 }
 #printWord{
-    font-size: clamp(1.4rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 /*-------------------------------menù------------------------------------*/
@@ -433,6 +433,10 @@ html, body{
     #circle svg{
         width: min(65vw, 350px);
     }
+    #loadingTexts{
+        width: 85%;
+        height: 35%;
+    }
     
     #scritta-lato{
         display: none;
@@ -488,6 +492,13 @@ html, body{
     }
     .cardWork{
         min-height: 220px;
+        position: relative;
+        box-shadow: 0 0 0 var(--highlight-2);
+    }
+    .workTitle h1, .workDescription { display: none; }
+    .workLabel { margin: 5px; background: none; padding: 0; }
+    .contBtnWork button {
+        margin: 5px;
     }
 
     /* -- contact section -- */

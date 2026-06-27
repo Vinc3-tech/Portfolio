@@ -5,7 +5,7 @@ const tempoAnimazioneTotale = 3
 const tempoAnimazioneScritte = 1
 
 // Animazione infinita del cerchio
-tl.addLabel("intro-cerchio");
+tl.add("intro-cerchio");
 tl.to("#circle", {
     scale: 1.2,
     duration: tempoAnimazioneTotale - .5,
@@ -15,20 +15,20 @@ tl.to("#circle", {
 });
 
 // Animazione dei testi di caricamento
-tl.addLabel("intro-testo1");
+tl.add("intro-testo1");
 tl.from("#loadingWord", {
     x: "-100",
     opacity: 0.5,
     duration: tempoAnimazioneScritte,
-    ease: "power2Out"
+    ease: "power2.out"
 }, "intro-cerchio");
 
-tl.addLabel("intro-testo2");
+tl.add("intro-testo2");
 tl.from("#madeByWord", {
     x: "100",
     opacity: 0.5,
     duration: tempoAnimazioneScritte,
-    ease: "power2Out"
+    ease: "power2.out"
 }, "intro-cerchio");
 
 //animazione caricamento percentuale
@@ -62,6 +62,6 @@ tl.to("#loadingSection", {
         });
     }
 });
-tl.to(".loadingSection", {
+tl.to("#loadingSection", {
     autoAlpha: 0
 })
