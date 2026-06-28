@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio - Venturino Vincenzo</title>
 
     <!--collegamenti css-->
     <link rel="stylesheet" href="src/css/colori.css">
@@ -38,7 +38,7 @@
     <!--menù-->
     <div id="contMenu" class="title-font divStandard">
         <div class="parent">
-            <span class="voce hoverTextEffect"><a href="#heroSection">index</a></span>
+            <span class="voce hoverTextEffect"><a href="#hero-section">index</a></span>
         </div>
         <div class="parent">
             <div class="voce hoverTextEffect"><a href="#workSection">my work</a></div>
@@ -71,10 +71,10 @@
                 <div class="word coding"><span>&ltcoding&gt</span></div>
             </div>
         </div>
-        <div id="scritta-lato" class="align-left">
+        <div class="scritta-lato align-left">
             <p class="testo-verticale jp-font">私は私なりのやり方でやる</p>
         </div>
-        <div id="scritta-lato" class="align-right">
+        <div class="scritta-lato align-right">
             <p class="testo-verticale secondary-font">I do it in my way</p>
         </div>
     </section>
@@ -90,7 +90,7 @@
     <section id="aboutMeSection">
         <div id="contAboutMe">
             <div class="parent">
-                <h1 id="aboutMeTitle" class="secondary-font italic highlighted-text anim-comparsa-testo">About Me</h1>
+                <h1 id="aboutMeTitle" class="secondary-font italic highlighted-text anim-comparsa-testo">About<br>Me</h1>
             </div>
         </div>
         <div id="aboutMeText" class="text-font">
@@ -103,8 +103,8 @@
 
     <!--works section-->
     <section id="workSection">
-        <div id="scritta-lato" class="align-left">
-            <span id="myWorkWord" class="testo-verticale secondary-font">— my works —</span>
+        <div class="scritta-lato align-left">
+            <span class="myWorkWord testo-verticale secondary-font">— my works —</span>
         </div>
         <div id="contCard" class="centerContent">
             <div id="work1" class="cardWork">
@@ -141,8 +141,8 @@
                 </div>
             </div>
         </div>
-        <div id="scritta-lato" class="align-right">
-            <span id="myWorkWord" class="testo-verticale secondary-font">— my works —</span>
+        <div class="scritta-lato align-right">
+            <span class="myWorkWord testo-verticale secondary-font">— my works —</span>
         </div>
     </section>
 
@@ -212,8 +212,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
-    <script src="src/js/animation/intro.js"></script>
-    <script src="src/js/main.js"></script>
+    <script type="module" src="src/js/intro.js"></script>
+    <script type="module" src="src/js/main.js"></script>
+    <script type="module" src="src/js/function.js"></script>
     
 </body>
 </html>
